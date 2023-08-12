@@ -1,1 +1,1 @@
-/usr/bin/cc CMakeFiles/main.dir/main.c.o -o main  ../src/libinclude.a 
+/usr/bin/gcc CMakeFiles/main.dir/main.c.o -o main  ../src/libinclude.a 

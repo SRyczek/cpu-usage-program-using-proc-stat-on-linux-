@@ -65,35 +65,17 @@ CMAKE_BINARY_DIR = /home/seb/Desktop/project_tietoevry/build
 # The main recursive "all" target.
 all: include/all
 all: src/all
-all: example/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: include/preinstall
 preinstall: src/preinstall
-preinstall: example/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: include/clean
 clean: src/clean
-clean: example/clean
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory example
-
-# Recursive "all" directory target.
-example/all: example/CMakeFiles/main.dir/all
-.PHONY : example/all
-
-# Recursive "preinstall" directory target.
-example/preinstall:
-.PHONY : example/preinstall
-
-# Recursive "clean" directory target.
-example/clean: example/CMakeFiles/main.dir/clean
-.PHONY : example/clean
 
 #=============================================================================
 # Directory level rules for directory include
@@ -114,6 +96,7 @@ include/clean:
 # Directory level rules for directory src
 
 # Recursive "all" directory target.
+src/all: src/CMakeFiles/main.dir/all
 src/all: src/CMakeFiles/include.dir/all
 .PHONY : src/all
 
@@ -122,8 +105,35 @@ src/preinstall:
 .PHONY : src/preinstall
 
 # Recursive "clean" directory target.
+src/clean: src/CMakeFiles/main.dir/clean
 src/clean: src/CMakeFiles/include.dir/clean
 .PHONY : src/clean
+
+#=============================================================================
+# Target rules for target src/CMakeFiles/main.dir
+
+# All Build rule for target.
+src/CMakeFiles/main.dir/all: src/CMakeFiles/include.dir/all
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=3,4 "Built target main"
+.PHONY : src/CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+src/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 0
+.PHONY : src/CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: src/CMakeFiles/main.dir/rule
+.PHONY : main
+
+# clean rule for target.
+src/CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/clean
+.PHONY : src/CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/include.dir
@@ -150,32 +160,6 @@ include: src/CMakeFiles/include.dir/rule
 src/CMakeFiles/include.dir/clean:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/clean
 .PHONY : src/CMakeFiles/include.dir/clean
-
-#=============================================================================
-# Target rules for target example/CMakeFiles/main.dir
-
-# All Build rule for target.
-example/CMakeFiles/main.dir/all: src/CMakeFiles/include.dir/all
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=3,4 "Built target main"
-.PHONY : example/CMakeFiles/main.dir/all
-
-# Build rule for subdir invocation for target.
-example/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 4
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 example/CMakeFiles/main.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 0
-.PHONY : example/CMakeFiles/main.dir/rule
-
-# Convenience name for target.
-main: example/CMakeFiles/main.dir/rule
-.PHONY : main
-
-# clean rule for target.
-example/CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f example/CMakeFiles/main.dir/build.make example/CMakeFiles/main.dir/clean
-.PHONY : example/CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -2,9 +2,7 @@
 /home/seb/Desktop/project_tietoevry/build/CMakeFiles/rebuild_cache.dir
 /home/seb/Desktop/project_tietoevry/build/include/CMakeFiles/edit_cache.dir
 /home/seb/Desktop/project_tietoevry/build/include/CMakeFiles/rebuild_cache.dir
+/home/seb/Desktop/project_tietoevry/build/src/CMakeFiles/main.dir
 /home/seb/Desktop/project_tietoevry/build/src/CMakeFiles/include.dir
 /home/seb/Desktop/project_tietoevry/build/src/CMakeFiles/edit_cache.dir
 /home/seb/Desktop/project_tietoevry/build/src/CMakeFiles/rebuild_cache.dir
-/home/seb/Desktop/project_tietoevry/build/example/CMakeFiles/main.dir
-/home/seb/Desktop/project_tietoevry/build/example/CMakeFiles/edit_cache.dir
-/home/seb/Desktop/project_tietoevry/build/example/CMakeFiles/rebuild_cache.dir

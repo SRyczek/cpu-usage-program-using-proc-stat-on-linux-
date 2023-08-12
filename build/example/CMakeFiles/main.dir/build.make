@@ -73,15 +73,15 @@ example/CMakeFiles/main.dir/main.c.o: example/CMakeFiles/main.dir/flags.make
 example/CMakeFiles/main.dir/main.c.o: ../example/main.c
 example/CMakeFiles/main.dir/main.c.o: example/CMakeFiles/main.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object example/CMakeFiles/main.dir/main.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT example/CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /home/seb/Desktop/project_tietoevry/example/main.c
+	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT example/CMakeFiles/main.dir/main.c.o -MF CMakeFiles/main.dir/main.c.o.d -o CMakeFiles/main.dir/main.c.o -c /home/seb/Desktop/project_tietoevry/example/main.c
 
 example/CMakeFiles/main.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/main.dir/main.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/example/main.c > CMakeFiles/main.dir/main.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/example/main.c > CMakeFiles/main.dir/main.c.i
 
 example/CMakeFiles/main.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/main.dir/main.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/example/main.c -o CMakeFiles/main.dir/main.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/example && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/example/main.c -o CMakeFiles/main.dir/main.c.s
 
 # Object files for target main
 main_OBJECTS = \

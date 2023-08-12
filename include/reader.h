@@ -1,4 +1,5 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 
-void printer(void);
+void* reader(void);

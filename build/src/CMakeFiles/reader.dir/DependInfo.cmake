@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/seb/Desktop/project_tietoevry/main.c" "CMakeFiles/main.dir/main.c.o" "gcc" "CMakeFiles/main.dir/main.c.o.d"
+  "/home/seb/Desktop/project_tietoevry/src/reader.c" "src/CMakeFiles/reader.dir/reader.c.o" "gcc" "src/CMakeFiles/reader.dir/reader.c.o.d"
   )
 
 # Targets to which this target links.
