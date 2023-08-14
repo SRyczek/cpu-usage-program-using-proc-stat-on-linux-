@@ -56,7 +56,7 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
   /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
-  ../include/reader.h \
+  ../include/lib.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -70,14 +70,26 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/alloca.h \
-  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h
+  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
 
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/stdint.h:
+
+/usr/include/strings.h:
 
 /usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
@@ -98,6 +110,10 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/time.h:
 
 /usr/include/features.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+../include/lib.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
@@ -135,6 +151,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
@@ -159,6 +177,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
+/usr/include/string.h:
+
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
@@ -178,8 +198,6 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-../include/reader.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 

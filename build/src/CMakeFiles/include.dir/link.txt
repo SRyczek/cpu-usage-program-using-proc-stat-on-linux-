@@ -1,2 +1,2 @@
-/usr/bin/ar qc libinclude.a CMakeFiles/include.dir/reader.c.o
+/usr/bin/ar qc libinclude.a CMakeFiles/include.dir/lib.c.o
 /usr/bin/ranlib libinclude.a

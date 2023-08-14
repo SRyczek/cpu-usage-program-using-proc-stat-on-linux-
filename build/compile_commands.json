@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",
-  "command": "/usr/bin/gcc  -I/.. -g -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c",
-  "file": "/home/seb/Desktop/project_tietoevry/src/reader.c"
+  "command": "/usr/bin/gcc  -I/.. -g -o CMakeFiles/include.dir/lib.c.o -c /home/seb/Desktop/project_tietoevry/src/lib.c",
+  "file": "/home/seb/Desktop/project_tietoevry/src/lib.c"
 },
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",

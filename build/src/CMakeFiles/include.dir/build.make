@@ -69,28 +69,28 @@ include src/CMakeFiles/include.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/include.dir/flags.make
 
-src/CMakeFiles/include.dir/reader.c.o: src/CMakeFiles/include.dir/flags.make
-src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c
-src/CMakeFiles/include.dir/reader.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/include.dir/reader.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/reader.c.o -MF CMakeFiles/include.dir/reader.c.o.d -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c
+src/CMakeFiles/include.dir/lib.c.o: src/CMakeFiles/include.dir/flags.make
+src/CMakeFiles/include.dir/lib.c.o: ../src/lib.c
+src/CMakeFiles/include.dir/lib.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/include.dir/lib.c.o"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/lib.c.o -MF CMakeFiles/include.dir/lib.c.o.d -o CMakeFiles/include.dir/lib.c.o -c /home/seb/Desktop/project_tietoevry/src/lib.c
 
-src/CMakeFiles/include.dir/reader.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/reader.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/reader.c > CMakeFiles/include.dir/reader.c.i
+src/CMakeFiles/include.dir/lib.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/lib.c.i"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/lib.c > CMakeFiles/include.dir/lib.c.i
 
-src/CMakeFiles/include.dir/reader.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/reader.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/reader.c -o CMakeFiles/include.dir/reader.c.s
+src/CMakeFiles/include.dir/lib.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/lib.c.s"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/lib.c -o CMakeFiles/include.dir/lib.c.s
 
 # Object files for target include
 include_OBJECTS = \
-"CMakeFiles/include.dir/reader.c.o"
+"CMakeFiles/include.dir/lib.c.o"
 
 # External object files for target include
 include_EXTERNAL_OBJECTS =
 
-src/libinclude.a: src/CMakeFiles/include.dir/reader.c.o
+src/libinclude.a: src/CMakeFiles/include.dir/lib.c.o
 src/libinclude.a: src/CMakeFiles/include.dir/build.make
 src/libinclude.a: src/CMakeFiles/include.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libinclude.a"

@@ -3,7 +3,7 @@ project(TietoevryProject)  #the same name as root project
 
 add_executable(main main.c)
 
-add_library(include reader.c)
+add_library(include lib.c)
 
 target_link_libraries(main PUBLIC include)
 

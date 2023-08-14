@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/include.dir/reader.c.o"
-  "CMakeFiles/include.dir/reader.c.o.d"
+  "CMakeFiles/include.dir/lib.c.o"
+  "CMakeFiles/include.dir/lib.c.o.d"
   "libinclude.a"
   "libinclude.pdb"
 )

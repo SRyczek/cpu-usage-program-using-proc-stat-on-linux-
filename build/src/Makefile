@@ -144,6 +144,30 @@ include/fast:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/build
 .PHONY : include/fast
 
+lib.o: lib.c.o
+.PHONY : lib.o
+
+# target to build an object file
+lib.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.o
+.PHONY : lib.c.o
+
+lib.i: lib.c.i
+.PHONY : lib.i
+
+# target to preprocess a source file
+lib.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.i
+.PHONY : lib.c.i
+
+lib.s: lib.c.s
+.PHONY : lib.s
+
+# target to generate assembly for a file
+lib.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.s
+.PHONY : lib.c.s
+
 main.o: main.c.o
 .PHONY : main.o
 
@@ -168,30 +192,6 @@ main.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
-reader.o: reader.c.o
-.PHONY : reader.o
-
-# target to build an object file
-reader.c.o:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.o
-.PHONY : reader.c.o
-
-reader.i: reader.c.i
-.PHONY : reader.i
-
-# target to preprocess a source file
-reader.c.i:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.i
-.PHONY : reader.c.i
-
-reader.s: reader.c.s
-.PHONY : reader.s
-
-# target to generate assembly for a file
-reader.c.s:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.s
-.PHONY : reader.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,12 +202,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... include"
 	@echo "... main"
+	@echo "... lib.o"
+	@echo "... lib.i"
+	@echo "... lib.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... reader.o"
-	@echo "... reader.i"
-	@echo "... reader.s"
 .PHONY : help
 
 
