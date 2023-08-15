@@ -22,15 +22,25 @@ long long prevNonIdle[MAX_CPU_NUM];
 long long total[MAX_CPU_NUM];
 long long prevTotal[MAX_CPU_NUM];
 
-long long cpuPercentage[MAX_CPU_NUM];
+long long prevIdle[MAX_CPU_NUM];
+long long Idle[MAX_CPU_NUM];
+
+double cpuPercentage[MAX_CPU_NUM];
 
 uint8_t ksIndex = 0;
 
 void *reader()
 {
     char cpuNum[10];
+    ksIndex = 0;
 
-    FILE *file = fopen("/proc/stat", "r");
+    FILE* file = fopen("/proc/stat", "r");
+
+    // char buffer[256];
+
+    // while(fgets(buffer, sizeof(buffer), file) != NULL){
+    //     printf("%s", buffer);
+    // }
 
     if (file != NULL) {   
         memset(cpuNum, 0, sizeof(cpuNum));
@@ -49,13 +59,15 @@ void *reader()
         } 
     }
     fclose(file);
+    
+    //ksPrinter();
 }
 
 void *analyzer() {
 
     for(int i = 0; i < MAX_CPU_NUM; i++) {
-        prevKS[i].idle += prevKS[i].iowait;
-        kS[i].idle += kS[i].iowait;
+        prevIdle[i] = prevKS[i].idle + prevKS[i].iowait;
+        Idle[i] = kS[i].idle + kS[i].iowait;
 
         prevNonIdle[i] = prevKS[i].user + prevKS[i].nice + 
                          prevKS[i].system + prevKS[i].irq + prevKS[i].softirq + 
@@ -64,21 +76,22 @@ void *analyzer() {
         nonIdle[i] =     kS[i].user + kS[i].nice + kS[i].system + kS[i].irq + 
                          kS[i].softirq + kS[i].steal;
 
-        prevTotal[i] = prevNonIdle[i] + prevKS[i].idle;
-        total[i] = nonIdle[i] + kS[i].idle;
+        prevTotal[i] = prevNonIdle[i] + prevIdle[i];
+        total[i] = nonIdle[i] + Idle[i];
 
-        cpuPercentage[i] = ((total[i] - prevTotal[i]) - (kS[i].idle - prevKS[i].idle)) / (total[i] - prevTotal[i]);
+        cpuPercentage[i] = (double)((total[i] - prevTotal[i]) - (Idle[i] - prevIdle[i])) / (total[i] - prevTotal[i]) * 100;
+
+        printf("cpuPercentage %f\n", cpuPercentage[i]);
 
         /* assign previous values */
-        prevKS[i].idle = kS[i].idle;
-        prevNonIdle[i] = nonIdle[i];
-        prevKS[i] = kS[i];
-    }
+        prevKS[i] = kS[i];  /* this maybe dont copy value */
 
+    }
 }
 
 void ksPrinter() {
     for (int i = 0; i < MAX_CPU_NUM; i++) {
+        printf("Printer****************************************************\n");
         printf("%lld ", kS[i].user);
         printf("%lld ", kS[i].nice);
         printf("%lld ", kS[i].system);
@@ -89,5 +102,6 @@ void ksPrinter() {
         printf("%lld ", kS[i].steal);
         printf("%lld ", kS[i].guest);
         printf("%lld \n", kS[i].guest_nice);
+        printf("Printer****************************************************\n");
     }
 }
