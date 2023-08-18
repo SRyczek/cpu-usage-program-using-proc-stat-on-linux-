@@ -23,11 +23,17 @@ typedef struct {
     long long guest_nice;
 } kernel_statistics_t;
 
+
 extern double *cpuPercentage;
 extern pthread_mutex_t mutex;
 extern kernel_statistics_t *prevKS;
 
+/* function */
 void initializer();
+void helper();
+uint8_t whichCpu(char* n);
+
+/* threads */
 void* reader();
 void* analyzer();
 void* printer();

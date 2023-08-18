@@ -1,0 +1,5 @@
+1. Pamietac ze BUFFER_LENGHT jest napisany dla tego sprzetu i jest z gory wiadome ile CPU jest
+    dlatego trzeba byloby to zmienic ale to w wolnej chwili
+2. Ogolnie jest problem bo przeciez warunki dwoch threadow sie zagniezdzaja, bo w momencie przeciez jak readIdx jest rowny writeIdx to
+    rowniez producer produkuje za duzo.
+3. JEszcze zapomnialem, ze przeciez reader wypisuje 7 miejsc a nie jedno dlatego sprawdzanie indeksu na pewno jest bledne

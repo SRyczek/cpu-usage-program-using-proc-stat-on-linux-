@@ -21,80 +21,132 @@ void initializer() {
     prevKS = (kernel_statistics_t *)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
     cpuPercentage = (double *)malloc(numCoresPlusOne * sizeof(double));
 
+    /* set prevKS name to use in analyzer */
+    /* WARNING! 
+        cpu index 0 is equal "cpu" 
+        cpu index 1 is equal "cpu0" 
+        cpu index 2 is equal "cpu1" 
+        cpu index 3 is equal "cpu2" 
+        ...
+        */
+    strcpy(prevKS[0].cpuNum, "cpu");
+    for(int i = 1; i < numCoresPlusOne; i++) {
+        sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
+    }
+
+    writeIdx = 0;
+    readIdx = 0;
+
 }
 
 void* reader() {
-    FILE* file = fopen("/proc/stat", "r");
-    if (file != NULL) {
 
-        /*  ten warunek zostal stworzony aby sprawdzic czy
-            indeks nie przekroczy czasem maksymalnej wielkosci tablicy
-            dlatego jesli petla for ruszy to nie powinien przekroczyc takiej liczby jak w warunku */
+    while(1) {
 
-        if(writeIdx > (BUFFER_LENGHT - numCoresPlusOne)) {
+        if (writeIdx > (BUFFER_LENGHT - numCoresPlusOne)) {
             writeIdx = 0;
+            printf("Buffor reset\n");
         }
-        
-        printf("Write index: %d\n", writeIdx);
-        for (int i = 0; i < numCoresPlusOne; i++) {
-            fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
-                        kS[writeIdx].cpuNum,
-                        &kS[writeIdx].user,   &kS[writeIdx].nice, &kS[writeIdx].system,  &kS[writeIdx].idle, 
-                        &kS[writeIdx].iowait, &kS[writeIdx].irq,  &kS[writeIdx].softirq, &kS[writeIdx].steal,
-                        &kS[writeIdx].guest,  &kS[writeIdx].guest_nice);
 
-            printf("%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld\n", 
-                        kS[writeIdx].cpuNum,
-                        kS[writeIdx].user,   kS[writeIdx].nice, kS[writeIdx].system,  kS[writeIdx].idle, 
-                        kS[writeIdx].iowait, kS[writeIdx].irq,  kS[writeIdx].softirq, kS[writeIdx].steal,
-                        kS[writeIdx].guest,  kS[writeIdx].guest_nice);
-            writeIdx++;
+        if (kS[writeIdx + numCoresPlusOne].user != 0) {
+            //printf("Reader reads data too fast\n");
+
+        } else {
+
+            FILE* file = fopen("/proc/stat", "r");
+            if (file != NULL) {
+
+                /*  ten warunek zostal stworzony aby sprawdzic czy
+                    indeks nie przekroczy czasem maksymalnej wielkosci tablicy
+                    dlatego jesli petla for ruszy to nie powinien przekroczyc takiej liczby jak w warunku */
+
+                
+                printf("Write index: %d\n", writeIdx);
+                pthread_mutex_lock(&mutex);
+                for (int i = 0; i < numCoresPlusOne; i++) {
+                    fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
+                                kS[writeIdx].cpuNum,
+                                &kS[writeIdx].user,   &kS[writeIdx].nice, &kS[writeIdx].system,  &kS[writeIdx].idle, 
+                                &kS[writeIdx].iowait, &kS[writeIdx].irq,  &kS[writeIdx].softirq, &kS[writeIdx].steal,
+                                &kS[writeIdx].guest,  &kS[writeIdx].guest_nice);
+
+                    printf("%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld\n", 
+                                kS[writeIdx].cpuNum,
+                                kS[writeIdx].user,   kS[writeIdx].nice, kS[writeIdx].system,  kS[writeIdx].idle, 
+                                kS[writeIdx].iowait, kS[writeIdx].irq,  kS[writeIdx].softirq, kS[writeIdx].steal,
+                                kS[writeIdx].guest,  kS[writeIdx].guest_nice);
+                    writeIdx++;
+                    
+                }
+                pthread_mutex_unlock(&mutex);
+            }
+            fclose(file);
             
         }
-        
+        sleep(13);
+
+
     }
-    fclose(file);
 
 }
 
-
 void* analyzer() {
 
-    long long nonIdle[numCoresPlusOne];
-    long long prevNonIdle[numCoresPlusOne];
+    while(1) {
 
-    long long total[numCoresPlusOne];
-    long long prevTotal[numCoresPlusOne];
+        long long nonIdle, prevNonIdle;
+        long long total, prevTotal;
+        long long prevIdle, Idle;
+        uint8_t prevIdx;
 
-    long long prevIdle[numCoresPlusOne];
-    long long Idle[numCoresPlusOne];
+        if (readIdx == writeIdx) {
 
-    for (int i = 0; i < numCoresPlusOne; i++) {
-        prevIdle[i] = prevKS[i].idle + prevKS[i].iowait;
+            //printf("ReadIdx is equal writeIdx\n");
+        } else {
 
-        prevNonIdle[i] = prevKS[i].user + prevKS[i].nice + 
-                        prevKS[i].system + prevKS[i].irq + prevKS[i].softirq + 
-                        prevKS[i].steal;
+            /* go readIdx to start */
+            if (readIdx >= BUFFER_LENGHT) {
+                readIdx = 0;
+            }
+            pthread_mutex_lock(&mutex);
+            prevIdx = whichCpu(kS[readIdx].cpuNum);
+            pthread_mutex_unlock(&mutex);
+            prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
 
-        //pthread_mutex_lock(&mutex);
+            prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
+                            prevKS[prevIdx].system + prevKS[prevIdx].irq + prevKS[prevIdx].softirq + 
+                            prevKS[prevIdx].steal;
 
-        Idle[i] = kS[i].idle + kS[i].iowait;
 
-        nonIdle[i] =     kS[i].user + kS[i].nice + kS[i].system + kS[i].irq + 
-                        kS[i].softirq + kS[i].steal;
+            pthread_mutex_lock(&mutex);
+            Idle = kS[readIdx].idle + kS[readIdx].iowait;
 
-        //pthread_mutex_unlock(&mutex);
+            nonIdle =     kS[readIdx].user + kS[readIdx].nice + kS[readIdx].system + kS[readIdx].irq + 
+                            kS[readIdx].softirq + kS[readIdx].steal;
+            pthread_mutex_unlock(&mutex);
 
-        prevTotal[i] = prevNonIdle[i] + prevIdle[i];
-        total[i] = nonIdle[i] + Idle[i];
 
-        cpuPercentage[i] = (double)((total[i] - prevTotal[i]) - (Idle[i] - prevIdle[i])) / (total[i] - prevTotal[i]) * 100;
+            prevTotal = prevNonIdle + prevIdle;
+            total = nonIdle + Idle;
 
-        printf("CPU perc %.2f\n", cpuPercentage[i]);
+            cpuPercentage[prevIdx] = (double)((total - prevTotal) - (Idle - prevIdle)) / (total - prevTotal) * 100;
 
-        /* assign previous values */
-        prevKS[i] = kS[i];
+            printf("CPU perc %.2f %%\n", cpuPercentage[prevIdx]);
+
+            pthread_mutex_lock(&mutex);
+            /* assign previous values */
+            memcpy(&prevKS[prevIdx], &kS[readIdx], sizeof(&kS[readIdx]));
+
+            /* reset struct */
+            memset(&kS[readIdx], 0, sizeof(kS[readIdx]));
+            pthread_mutex_unlock(&mutex);
+            readIdx++;
+
+            
+        }
+        sleep(1);
     }
+
 
 }
 
@@ -102,8 +154,15 @@ void* analyzer() {
 
 void* printer() {
 
-    for (int i = 0; i < numCoresPlusOne; i++) {
-        printf("CPU%d USAGE %.2f %%\n", i, cpuPercentage[i]);
+    while (1) {
+
+        for (int i = 0; i < numCoresPlusOne; i++) {
+            pthread_mutex_lock(&mutex);
+            printf("cpu%d USAGE %.2f %%\n", i, cpuPercentage[i]);
+            pthread_mutex_unlock(&mutex);
+        }
+        printf("\n");
+        sleep(1);
     }
 }
 
@@ -113,6 +172,19 @@ void* watchdog() {
 
 void* logger() {
 
+}
+
+uint8_t whichCpu(char* n) {
+
+    for(int i = 0; i < numCoresPlusOne; i++) {
+        if(strcmp(n, prevKS[i].cpuNum) == 0) {
+            return i;
+        } 
+    }
+
+    printf("whichCpu error\n");
+    return 0;
+    
 }
 
 void helper() {
