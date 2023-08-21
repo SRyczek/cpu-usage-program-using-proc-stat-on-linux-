@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/..
 
-C_FLAGS = -g
+C_FLAGS =  -Wall -Wextra -g -pthread -g
 

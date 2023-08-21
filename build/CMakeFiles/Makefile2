@@ -116,12 +116,12 @@ src/clean: src/CMakeFiles/include.dir/clean
 src/CMakeFiles/main.dir/all: src/CMakeFiles/include.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=3,4 "Built target main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=9,10 "Built target main"
 .PHONY : src/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/main.dir/rule
@@ -142,12 +142,12 @@ src/CMakeFiles/main.dir/clean:
 src/CMakeFiles/include.dir/all:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=1,2 "Built target include"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8 "Built target include"
 .PHONY : src/CMakeFiles/include.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/include.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/include.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/seb/Desktop/project_tietoevry/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/include.dir/rule

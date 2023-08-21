@@ -144,6 +144,54 @@ include/fast:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/build
 .PHONY : include/fast
 
+analyzer.o: analyzer.c.o
+.PHONY : analyzer.o
+
+# target to build an object file
+analyzer.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/analyzer.c.o
+.PHONY : analyzer.c.o
+
+analyzer.i: analyzer.c.i
+.PHONY : analyzer.i
+
+# target to preprocess a source file
+analyzer.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/analyzer.c.i
+.PHONY : analyzer.c.i
+
+analyzer.s: analyzer.c.s
+.PHONY : analyzer.s
+
+# target to generate assembly for a file
+analyzer.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/analyzer.c.s
+.PHONY : analyzer.c.s
+
+global.o: global.c.o
+.PHONY : global.o
+
+# target to build an object file
+global.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.o
+.PHONY : global.c.o
+
+global.i: global.c.i
+.PHONY : global.i
+
+# target to preprocess a source file
+global.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.i
+.PHONY : global.c.i
+
+global.s: global.c.s
+.PHONY : global.s
+
+# target to generate assembly for a file
+global.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.s
+.PHONY : global.c.s
+
 lib.o: lib.c.o
 .PHONY : lib.o
 
@@ -167,6 +215,30 @@ lib.s: lib.c.s
 lib.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.s
 .PHONY : lib.c.s
+
+logger.o: logger.c.o
+.PHONY : logger.o
+
+# target to build an object file
+logger.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/logger.c.o
+.PHONY : logger.c.o
+
+logger.i: logger.c.i
+.PHONY : logger.i
+
+# target to preprocess a source file
+logger.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/logger.c.i
+.PHONY : logger.c.i
+
+logger.s: logger.c.s
+.PHONY : logger.s
+
+# target to generate assembly for a file
+logger.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/logger.c.s
+.PHONY : logger.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -192,6 +264,78 @@ main.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/main.dir/build.make src/CMakeFiles/main.dir/main.c.s
 .PHONY : main.c.s
 
+printer.o: printer.c.o
+.PHONY : printer.o
+
+# target to build an object file
+printer.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/printer.c.o
+.PHONY : printer.c.o
+
+printer.i: printer.c.i
+.PHONY : printer.i
+
+# target to preprocess a source file
+printer.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/printer.c.i
+.PHONY : printer.c.i
+
+printer.s: printer.c.s
+.PHONY : printer.s
+
+# target to generate assembly for a file
+printer.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/printer.c.s
+.PHONY : printer.c.s
+
+reader.o: reader.c.o
+.PHONY : reader.o
+
+# target to build an object file
+reader.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.o
+.PHONY : reader.c.o
+
+reader.i: reader.c.i
+.PHONY : reader.i
+
+# target to preprocess a source file
+reader.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.i
+.PHONY : reader.c.i
+
+reader.s: reader.c.s
+.PHONY : reader.s
+
+# target to generate assembly for a file
+reader.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/reader.c.s
+.PHONY : reader.c.s
+
+watchDog.o: watchDog.c.o
+.PHONY : watchDog.o
+
+# target to build an object file
+watchDog.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/watchDog.c.o
+.PHONY : watchDog.c.o
+
+watchDog.i: watchDog.c.i
+.PHONY : watchDog.i
+
+# target to preprocess a source file
+watchDog.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/watchDog.c.i
+.PHONY : watchDog.c.i
+
+watchDog.s: watchDog.c.s
+.PHONY : watchDog.s
+
+# target to generate assembly for a file
+watchDog.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/watchDog.c.s
+.PHONY : watchDog.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -202,12 +346,30 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... include"
 	@echo "... main"
+	@echo "... analyzer.o"
+	@echo "... analyzer.i"
+	@echo "... analyzer.s"
+	@echo "... global.o"
+	@echo "... global.i"
+	@echo "... global.s"
 	@echo "... lib.o"
 	@echo "... lib.i"
 	@echo "... lib.s"
+	@echo "... logger.o"
+	@echo "... logger.i"
+	@echo "... logger.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... printer.o"
+	@echo "... printer.i"
+	@echo "... printer.s"
+	@echo "... reader.o"
+	@echo "... reader.i"
+	@echo "... reader.s"
+	@echo "... watchDog.o"
+	@echo "... watchDog.i"
+	@echo "... watchDog.s"
 .PHONY : help
 
 

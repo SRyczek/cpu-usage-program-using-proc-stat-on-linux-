@@ -3,3 +3,15 @@
 2. Ogolnie jest problem bo przeciez warunki dwoch threadow sie zagniezdzaja, bo w momencie przeciez jak readIdx jest rowny writeIdx to
     rowniez producer produkuje za duzo.
 3. JEszcze zapomnialem, ze przeciez reader wypisuje 7 miejsc a nie jedno dlatego sprawdzanie indeksu na pewno jest bledne
+
+
+
+Aktualne toDO
+1. Zmodyfikowac problam aby minimalizowac liczbe wystapien i ogolnie ilosc zmiennych globalnych.
+2. Usunac printf z innych reader oraz analyzer bo przeciez moga wplywac na dzialanie programu.
+
+                    // printf("%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld\n", 
+                    //             kS[writeIdx].cpuNum,
+                    //             kS[writeIdx].user,   kS[writeIdx].nice, kS[writeIdx].system,  kS[writeIdx].idle, 
+                    //             kS[writeIdx].iowait, kS[writeIdx].irq,  kS[writeIdx].softirq, kS[writeIdx].steal,
+                    //             kS[writeIdx].guest,  kS[writeIdx].guest_nice);

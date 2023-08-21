@@ -1,5 +1,5 @@
-src/CMakeFiles/include.dir/reader.c.o: \
- /home/seb/Desktop/project_tietoevry/src/reader.c \
+src/CMakeFiles/include.dir/logger.c.o: \
+ /home/seb/Desktop/project_tietoevry/src/logger.c \
  /usr/include/stdc-predef.h \
  /home/seb/Desktop/project_tietoevry/src/../include/lib.h \
  /usr/include/stdio.h \

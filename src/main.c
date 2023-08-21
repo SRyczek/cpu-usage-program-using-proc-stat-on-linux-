@@ -22,6 +22,7 @@ int main()
     pthread_join(analyzerThread, NULL);
     pthread_join(printerThread, NULL);
 
+    //eader();
 
     pthread_mutex_destroy(&mutex);
 
