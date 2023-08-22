@@ -15,3 +15,9 @@ Aktualne toDO
                     //             kS[writeIdx].user,   kS[writeIdx].nice, kS[writeIdx].system,  kS[writeIdx].idle, 
                     //             kS[writeIdx].iowait, kS[writeIdx].irq,  kS[writeIdx].softirq, kS[writeIdx].steal,
                     //             kS[writeIdx].guest,  kS[writeIdx].guest_nice);
+
+
+Pomysl na loggera:
+
+Kazdy watek bedzie mial dostepna tablice char[] ktora bedzie globalna. JEsli odczyta dane to wchodzi w sem_wait(). Watek powinien
+wtedy odczytac wszystkie tablice z kazdego watku. Inne powinny byc NULL czy puste. I zapisac do pliku

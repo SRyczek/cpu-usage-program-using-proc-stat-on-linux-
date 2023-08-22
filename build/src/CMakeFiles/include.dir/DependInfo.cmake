@@ -9,8 +9,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/seb/Desktop/project_tietoevry/src/analyzer.c" "src/CMakeFiles/include.dir/analyzer.c.o" "gcc" "src/CMakeFiles/include.dir/analyzer.c.o.d"
+  "/home/seb/Desktop/project_tietoevry/src/buffer.c" "src/CMakeFiles/include.dir/buffer.c.o" "gcc" "src/CMakeFiles/include.dir/buffer.c.o.d"
   "/home/seb/Desktop/project_tietoevry/src/global.c" "src/CMakeFiles/include.dir/global.c.o" "gcc" "src/CMakeFiles/include.dir/global.c.o.d"
-  "/home/seb/Desktop/project_tietoevry/src/lib.c" "src/CMakeFiles/include.dir/lib.c.o" "gcc" "src/CMakeFiles/include.dir/lib.c.o.d"
   "/home/seb/Desktop/project_tietoevry/src/logger.c" "src/CMakeFiles/include.dir/logger.c.o" "gcc" "src/CMakeFiles/include.dir/logger.c.o.d"
   "/home/seb/Desktop/project_tietoevry/src/printer.c" "src/CMakeFiles/include.dir/printer.c.o" "gcc" "src/CMakeFiles/include.dir/printer.c.o.d"
   "/home/seb/Desktop/project_tietoevry/src/reader.c" "src/CMakeFiles/include.dir/reader.c.o" "gcc" "src/CMakeFiles/include.dir/reader.c.o.d"

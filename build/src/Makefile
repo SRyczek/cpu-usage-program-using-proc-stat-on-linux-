@@ -168,6 +168,30 @@ analyzer.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/analyzer.c.s
 .PHONY : analyzer.c.s
 
+buffer.o: buffer.c.o
+.PHONY : buffer.o
+
+# target to build an object file
+buffer.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/buffer.c.o
+.PHONY : buffer.c.o
+
+buffer.i: buffer.c.i
+.PHONY : buffer.i
+
+# target to preprocess a source file
+buffer.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/buffer.c.i
+.PHONY : buffer.c.i
+
+buffer.s: buffer.c.s
+.PHONY : buffer.s
+
+# target to generate assembly for a file
+buffer.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/buffer.c.s
+.PHONY : buffer.c.s
+
 global.o: global.c.o
 .PHONY : global.o
 
@@ -191,30 +215,6 @@ global.s: global.c.s
 global.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.s
 .PHONY : global.c.s
-
-lib.o: lib.c.o
-.PHONY : lib.o
-
-# target to build an object file
-lib.c.o:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.o
-.PHONY : lib.c.o
-
-lib.i: lib.c.i
-.PHONY : lib.i
-
-# target to preprocess a source file
-lib.c.i:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.i
-.PHONY : lib.c.i
-
-lib.s: lib.c.s
-.PHONY : lib.s
-
-# target to generate assembly for a file
-lib.c.s:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/lib.c.s
-.PHONY : lib.c.s
 
 logger.o: logger.c.o
 .PHONY : logger.o
@@ -349,12 +349,12 @@ help:
 	@echo "... analyzer.o"
 	@echo "... analyzer.i"
 	@echo "... analyzer.s"
+	@echo "... buffer.o"
+	@echo "... buffer.i"
+	@echo "... buffer.s"
 	@echo "... global.o"
 	@echo "... global.i"
 	@echo "... global.s"
-	@echo "... lib.o"
-	@echo "... lib.i"
-	@echo "... lib.s"
 	@echo "... logger.o"
 	@echo "... logger.i"
 	@echo "... logger.s"

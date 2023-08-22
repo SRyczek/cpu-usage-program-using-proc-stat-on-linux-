@@ -1,7 +1,8 @@
 
 #include "../include/lib.h"
 
-void* watchdog() {
+
+void* watchDog() {
     while(1) {
         pthread_mutex_lock(&mutex);
         watchDogFlag = 0;

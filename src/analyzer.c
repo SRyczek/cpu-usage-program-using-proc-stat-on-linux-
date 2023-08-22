@@ -16,7 +16,7 @@ void* analyzer() {
 
         if (readIdx == writeIdx) {
             //printf("ReadIdx is equal writeIdx\n");
-
+            
         } else {
 
 
@@ -40,7 +40,6 @@ void* analyzer() {
             pthread_mutex_lock(&mutex);
             cpuPercentage[prevIdx] = calculateCpuPercentage(&prevNonIdle, &prevIdle, &nonIdle, &Idle);
             kS[writeIdx].flag = 0;
-            
             pthread_mutex_unlock(&mutex);
              /* assign previous values */
             memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));

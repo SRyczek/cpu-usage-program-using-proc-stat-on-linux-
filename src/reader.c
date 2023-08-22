@@ -6,8 +6,15 @@ void* reader() {
     while(1) {
 
         if (writeIdx > (BUFFER_LENGHT - numCoresPlusOne)) {
+
             writeIdx = 0;
-            //printf("Buffor reset\n");
+            printf("Buffor reset\n");
+            // strcpy(readerLog, "Buffor reset\n");
+            // pthread_cond_signal(&loggerStart);
+            // pthread_mutex_lock(&mutex);
+            // pthread_cond_wait(&loggerEnd, &mutex);
+            // pthread_mutex_unlock(&mutex);
+
         }
 
         if (kS[writeIdx + numCoresPlusOne].flag == 1) {
@@ -23,7 +30,8 @@ void* reader() {
                     indeks nie przekroczy czasem maksymalnej wielkosci tablicy
                     dlatego jesli petla for ruszy to nie powinien przekroczyc takiej liczby jak w warunku */
 
-                //printf("Writeidx: %d\n", writeIdx);            
+                //printf("Writeidx: %d\n", writeIdx);
+                            
                 pthread_mutex_lock(&mutex);
                 for (int i = 0; i < numCoresPlusOne; i++) {
                     fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
@@ -43,10 +51,10 @@ void* reader() {
                     
                 }
                 pthread_mutex_unlock(&mutex);
+                fclose(file);
             } else {
                 perror("Error opening file\n");
             }
-            fclose(file);
             
             
         }

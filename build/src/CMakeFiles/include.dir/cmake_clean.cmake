@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/include.dir/analyzer.c.o"
   "CMakeFiles/include.dir/analyzer.c.o.d"
+  "CMakeFiles/include.dir/buffer.c.o"
+  "CMakeFiles/include.dir/buffer.c.o.d"
   "CMakeFiles/include.dir/global.c.o"
   "CMakeFiles/include.dir/global.c.o.d"
-  "CMakeFiles/include.dir/lib.c.o"
-  "CMakeFiles/include.dir/lib.c.o.d"
   "CMakeFiles/include.dir/logger.c.o"
   "CMakeFiles/include.dir/logger.c.o.d"
   "CMakeFiles/include.dir/printer.c.o"

@@ -1,16 +1,6 @@
 [
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",
-  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/lib.c.o -c /home/seb/Desktop/project_tietoevry/src/lib.c",
-  "file": "/home/seb/Desktop/project_tietoevry/src/lib.c"
-},
-{
-  "directory": "/home/seb/Desktop/project_tietoevry/build/src",
-  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c",
-  "file": "/home/seb/Desktop/project_tietoevry/src/reader.c"
-},
-{
-  "directory": "/home/seb/Desktop/project_tietoevry/build/src",
   "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/global.c.o -c /home/seb/Desktop/project_tietoevry/src/global.c",
   "file": "/home/seb/Desktop/project_tietoevry/src/global.c"
 },
@@ -33,6 +23,16 @@
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",
   "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/logger.c.o -c /home/seb/Desktop/project_tietoevry/src/logger.c",
   "file": "/home/seb/Desktop/project_tietoevry/src/logger.c"
+},
+{
+  "directory": "/home/seb/Desktop/project_tietoevry/build/src",
+  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c",
+  "file": "/home/seb/Desktop/project_tietoevry/src/reader.c"
+},
+{
+  "directory": "/home/seb/Desktop/project_tietoevry/build/src",
+  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/buffer.c.o -c /home/seb/Desktop/project_tietoevry/src/buffer.c",
+  "file": "/home/seb/Desktop/project_tietoevry/src/buffer.c"
 },
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",

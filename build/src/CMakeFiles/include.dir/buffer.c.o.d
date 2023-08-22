@@ -1,5 +1,5 @@
-src/CMakeFiles/include.dir/watchDog.c.o: \
- /home/seb/Desktop/project_tietoevry/src/watchDog.c \
+src/CMakeFiles/include.dir/buffer.c.o: \
+ /home/seb/Desktop/project_tietoevry/src/buffer.c \
  /usr/include/stdc-predef.h \
  /home/seb/Desktop/project_tietoevry/src/../include/lib.h \
  /usr/include/stdio.h \
