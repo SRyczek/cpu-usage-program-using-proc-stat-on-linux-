@@ -1,8 +1,7 @@
 
 #include "../include/lib.h"
 
-int main()
-{
+int main() {
 
     /* calculate num of cores in hardware */
     long numCores = sysconf(_SC_NPROCESSORS_ONLN);
@@ -26,22 +25,18 @@ int main()
         sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
     }
 
+    cBuff = cbuff_new(BUFFER_LENGHT);
+
     printf("Program starts\n\n");
 
     pthread_mutex_init(&mutex, NULL);
-    pthread_cond_init(&loggerStart, NULL);
-    pthread_cond_init(&loggerEnd, NULL);
 
     pthread_create(&readerThread, NULL, &reader, NULL);
     pthread_create(&analyzerThread, NULL, &analyzer, NULL);
-    pthread_create(&printerThread, NULL, &printer, NULL);
 
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
-    pthread_join(printerThread, NULL);
 
-    pthread_cond_destroy(&loggerStart);
-    pthread_cond_destroy(&loggerEnd);
     pthread_mutex_destroy(&mutex);
     free(prevKS);
     free(cpuPercentage);

@@ -9,48 +9,32 @@ void* analyzer() {
         long long prevIdle, Idle;
         uint8_t prevIdx;
 
-        /* go readIdx to start */
-        if (readIdx >= BUFFER_LENGHT) {
-            readIdx = 0;
-        }
+        kernel_statistics_t inputKs = cbuff_remove(cBuff);
+        
+        /* choose cpy by name */
+        prevIdx = whichCpu(inputKs.cpuNum);
 
-        if (readIdx == writeIdx) {
-            //printf("ReadIdx is equal writeIdx\n");
-            
-        } else {
+        
+        prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
+        prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
+                        prevKS[prevIdx].system + prevKS[prevIdx].irq + prevKS[prevIdx].softirq + 
+                        prevKS[prevIdx].steal;
+        Idle = inputKs.idle + inputKs.iowait;
+        nonIdle =     inputKs.user + inputKs.nice + inputKs.system + inputKs.irq + 
+                        inputKs.softirq + inputKs.steal;
 
+        pthread_mutex_lock(&mutex);
+        cpuPercentage[prevIdx] = calculateCpuPercentage(&prevNonIdle, &prevIdle, &nonIdle, &Idle);
+        pthread_mutex_unlock(&mutex);
+        /* assign previous values */
+        memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
 
-            pthread_mutex_lock(&mutex);
-            kernel_statistics_t inputKs = kS[readIdx];
-            pthread_mutex_unlock(&mutex);
+        readIdx++;
 
-            /* choose cpy by name */
-            prevIdx = whichCpu(inputKs.cpuNum);
-
-
-            prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
-            prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
-                            prevKS[prevIdx].system + prevKS[prevIdx].irq + prevKS[prevIdx].softirq + 
-                            prevKS[prevIdx].steal;
-            Idle = inputKs.idle + inputKs.iowait;
-            nonIdle =     inputKs.user + inputKs.nice + inputKs.system + inputKs.irq + 
-                            inputKs.softirq + inputKs.steal;
-
-
-            pthread_mutex_lock(&mutex);
-            cpuPercentage[prevIdx] = calculateCpuPercentage(&prevNonIdle, &prevIdle, &nonIdle, &Idle);
-            kS[writeIdx].flag = 0;
-            pthread_mutex_unlock(&mutex);
-             /* assign previous values */
-            memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
-
-            readIdx++;
-
-        }
         pthread_mutex_lock(&mutex);
         watchDogFlag = 1;
         pthread_mutex_unlock(&mutex);
-
+        sleep(1);
     }
 
 }

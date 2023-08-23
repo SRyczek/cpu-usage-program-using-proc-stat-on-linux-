@@ -26,7 +26,7 @@ typedef struct {
 } kernel_statistics_t;
 
 typedef struct cbuff_{
-    int * buff;
+    kernel_statistics_t * buff;
     int start;
     int end;
     int size;
@@ -35,7 +35,7 @@ typedef struct cbuff_{
 
 
 
-extern kernel_statistics_t kS[BUFFER_LENGHT];
+extern kernel_statistics_t kS;
 extern double *cpuPercentage;
 extern pthread_mutex_t mutex;
 extern kernel_statistics_t *prevKS;
@@ -49,7 +49,7 @@ extern pthread_t analyzerThread;
 extern pthread_t printerThread;
 extern pthread_t watchDogThread;
 extern pthread_t oggerThread;
-
+extern cbuff_t* cBuff;
 
 extern char readerLog[50];
 extern char analyzerLog[50];
@@ -78,3 +78,6 @@ void* watchDog();
 void* logger();
 
 /*buffor */
+cbuff_t* cbuff_new(int size);
+void cbuff_add(cbuff_t * cb, kernel_statistics_t elem);
+kernel_statistics_t cbuff_remove(cbuff_t * cb);
