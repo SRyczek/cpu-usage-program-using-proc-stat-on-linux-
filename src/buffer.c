@@ -16,13 +16,13 @@ void cbuff_add(cbuff_t * cb, kernel_statistics_t elem) {
   while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&loggerEnd, &mutex);
 
   //printf("Added Elem[%d] = %d\n",cb->end, elem);
-  printf("Added element\n");
+  //printf("Added element\n");
   cb->buff[cb->end] = elem;
   cb->end = (cb->end+1) % cb->size;
   cb->count++;
 
-  //printf("Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
-  pthread_cond_signal (&loggerStart); 
+  //printf("From Add Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
+  pthread_cond_signal(&loggerStart); 
   pthread_mutex_unlock(&mutex);
 }
 
@@ -30,19 +30,20 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
   pthread_mutex_lock(&mutex);
   int start = cb->start;
   kernel_statistics_t ret;
-  printf("cbuf remove work\n");
-  while(cb->count <= 0 || (cb->count || (start % cb->size) == cb->end)) pthread_cond_wait(&loggerStart, &mutex);
+
+  while(cb->count <= 0) pthread_cond_wait(&loggerStart, &mutex);
 
   if(cb->count || (start % cb->size) != cb->end) {
     //printf("Removed Elem[%d] = %d\n",cb->start, cb->buff[cb->start]);
-    printf("Removed element\n");
+    //printf("Removed element\n");
+    //printf("From Remove Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
     ret = cb->buff[cb->start];
     cb->start = (cb->start + 1 ) % cb->size;
     cb->count--;
   } else {
     printf("Something goes wrong with remove\n");
   }
-  pthread_cond_signal (&loggerEnd); 
+  pthread_cond_signal(&loggerEnd); 
   pthread_mutex_unlock(&mutex);
 
   return ret;

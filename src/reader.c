@@ -30,7 +30,7 @@ void* reader() {
         // watchDogFlag = 1;
         // pthread_mutex_unlock(&mutex);
 
-        sleep(1);
+        //sleep(1);
     }
 
 }

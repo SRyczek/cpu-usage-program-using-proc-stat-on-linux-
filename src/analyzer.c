@@ -10,7 +10,7 @@ void* analyzer() {
         uint8_t prevIdx;
 
         kernel_statistics_t inputKs = cbuff_remove(cBuff);
-        
+
         /* choose cpy by name */
         prevIdx = whichCpu(inputKs.cpuNum);
 
@@ -23,9 +23,8 @@ void* analyzer() {
         nonIdle =     inputKs.user + inputKs.nice + inputKs.system + inputKs.irq + 
                         inputKs.softirq + inputKs.steal;
 
-        pthread_mutex_lock(&mutex);
         cpuPercentage[prevIdx] = calculateCpuPercentage(&prevNonIdle, &prevIdle, &nonIdle, &Idle);
-        pthread_mutex_unlock(&mutex);
+
         /* assign previous values */
         memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
 
@@ -34,7 +33,7 @@ void* analyzer() {
         pthread_mutex_lock(&mutex);
         watchDogFlag = 1;
         pthread_mutex_unlock(&mutex);
-        sleep(1);
+        //sleep(1);
     }
 
 }
