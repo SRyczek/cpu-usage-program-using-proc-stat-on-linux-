@@ -6,10 +6,6 @@ void* reader() {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
 
-            /*  ten warunek zostal stworzony aby sprawdzic czy
-                indeks nie przekroczy czasem maksymalnej wielkosci tablicy
-                dlatego jesli petla for ruszy to nie powinien przekroczyc takiej liczby jak w warunku */
-
             for (int i = 0; i < numCoresPlusOne; i++) {
                 fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
                             kS.cpuNum,
@@ -20,17 +16,16 @@ void* reader() {
                 /* add data to buffor */
                 cbuff_add(cBuff, kS);
             }
-            printf("\n");
+
             fclose(file);
         } else {
             perror("Error opening file\n");
         }
             
-        // pthread_mutex_lock(&mutex);
-        // watchDogFlag = 1;
-        // pthread_mutex_unlock(&mutex);
+        usleep(1000000);
 
-        //sleep(1);
+        atomic_store(&readerFlag, THREAD_WORKS);
+
     }
 
 }

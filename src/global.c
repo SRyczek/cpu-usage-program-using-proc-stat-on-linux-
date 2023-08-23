@@ -5,9 +5,9 @@ kernel_statistics_t kS;
 double *cpuPercentage;
 pthread_mutex_t mutex;
 kernel_statistics_t *prevKS;
-volatile uint8_t watchDogFlag;
-uint8_t writeIdx;
-uint8_t readIdx;
+volatile _Atomic int analyzerFlag;
+volatile _Atomic int readerFlag;
+volatile _Atomic int printerFlag;
 cbuff_t* cBuff;
 
 /* threads */

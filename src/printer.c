@@ -4,6 +4,7 @@
 void* printer() {
 
     while(1) {
+
         pthread_mutex_lock(&mutex);
         printf("cpu  USAGE %.2f %%\n", cpuPercentage[0]);
         for (int i = 1; i < numCoresPlusOne; i++) {
@@ -12,6 +13,6 @@ void* printer() {
         pthread_mutex_unlock(&mutex);
         printf("\n");
         sleep(1);
-
+        atomic_store(&printerFlag, THREAD_WORKS);
     }
 }

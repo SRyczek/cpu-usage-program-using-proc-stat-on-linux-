@@ -7,8 +7,13 @@
 #include <semaphore.h>
 #include <unistd.h>
 #include <sys/time.h>
+#include <stdatomic.h>
+
 
 #define BUFFER_LENGHT 12 * 7
+#define THREAD_WORKS 1
+#define THREAD_NOT_WORKING 0
+
 
 typedef struct {
     char cpuNum[10];
@@ -39,9 +44,6 @@ extern kernel_statistics_t kS;
 extern double *cpuPercentage;
 extern pthread_mutex_t mutex;
 extern kernel_statistics_t *prevKS;
-extern volatile uint8_t watchDogFlag;
-extern uint8_t writeIdx;
-extern uint8_t readIdx;
 extern pthread_cond_t loggerStart;
 extern pthread_cond_t loggerEnd;
 extern pthread_t readerThread;
@@ -50,6 +52,12 @@ extern pthread_t printerThread;
 extern pthread_t watchDogThread;
 extern pthread_t oggerThread;
 extern cbuff_t* cBuff;
+
+/* watchDogFlag */
+extern volatile _Atomic int analyzerFlag;
+extern volatile _Atomic int readerFlag;
+extern volatile _Atomic int printerFlag;
+
 
 extern char readerLog[50];
 extern char analyzerLog[50];

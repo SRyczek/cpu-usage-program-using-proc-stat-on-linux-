@@ -7,13 +7,14 @@ void* analyzer() {
 
         long long nonIdle, prevNonIdle;
         long long prevIdle, Idle;
+        long long prevTotal, total;
+
         uint8_t prevIdx;
 
         kernel_statistics_t inputKs = cbuff_remove(cBuff);
 
         /* choose cpy by name */
         prevIdx = whichCpu(inputKs.cpuNum);
-
         
         prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
         prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
@@ -23,17 +24,19 @@ void* analyzer() {
         nonIdle =     inputKs.user + inputKs.nice + inputKs.system + inputKs.irq + 
                         inputKs.softirq + inputKs.steal;
 
-        cpuPercentage[prevIdx] = calculateCpuPercentage(&prevNonIdle, &prevIdle, &nonIdle, &Idle);
+        prevTotal = prevNonIdle + prevIdle;
+        total = nonIdle + Idle;
+
+        long long totalLd = total - prevTotal;
+        long long idled = Idle - prevIdle;
+
+        cpuPercentage[prevIdx] = ((double)(totalLd - (double)idled) / (double)totalLd) * 100;
 
         /* assign previous values */
         memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
 
-        readIdx++;
+        atomic_store(&analyzerFlag, THREAD_WORKS);
 
-        pthread_mutex_lock(&mutex);
-        watchDogFlag = 1;
-        pthread_mutex_unlock(&mutex);
-        //sleep(1);
     }
 
 }
@@ -45,22 +48,7 @@ uint8_t whichCpu(char* n) {
             return i;
         } 
     }
-
     printf("whichCpu error\n");
     return 0;
-
-}
-
-double calculateCpuPercentage(long long* inPrevNonIdle, 
-                              long long* inPrevIdle, 
-                              long long* inNonIdle, 
-                              long long* inIdle) {
-
-    long long prevTotal, total;
-
-    prevTotal = *inPrevNonIdle + *inPrevIdle;
-    total = *inNonIdle + *inIdle;
-
-    return (double)((total - prevTotal) - (*inIdle - *inPrevIdle)) / (total - prevTotal) * 100;
 
 }

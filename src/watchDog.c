@@ -1,18 +1,29 @@
 
-// #include "../include/lib.h"
+#include "../include/lib.h"
 
 
-// void* watchDog() {
-//     while(1) {
-//         pthread_mutex_lock(&mutex);
-//         watchDogFlag = 0;
-//         pthread_mutex_unlock(&mutex);
-//         sleep(2);
-//         if(watchDogFlag == 0) {
+void* watchDog() {
+    while(1) {
 
-//             printf("Watchdog Error\n");
-//             sleep(3);
-//             exit(0);
-//         }
-//     }
-// }
+        atomic_store(&analyzerFlag, THREAD_NOT_WORKING);
+        atomic_store(&readerFlag, THREAD_NOT_WORKING);
+        atomic_store(&printerFlag, THREAD_NOT_WORKING);
+        
+        sleep(2);
+
+        if(atomic_load(&analyzerFlag) == THREAD_NOT_WORKING) {
+            printf("Analyzer is not working\n");
+            sleep(3);
+            exit(0);
+        } else if (atomic_load(&readerFlag) == THREAD_NOT_WORKING){
+            printf("Reader is not working\n");
+            sleep(3);
+            exit(0);
+        } else if (atomic_load(&printerFlag) == THREAD_NOT_WORKING) {
+            printf("Printer is not working\n");
+            sleep(3);
+            exit(0); 
+        }
+
+    }
+}

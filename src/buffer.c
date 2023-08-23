@@ -30,7 +30,6 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
   pthread_mutex_lock(&mutex);
   int start = cb->start;
   kernel_statistics_t ret;
-
   while(cb->count <= 0) pthread_cond_wait(&loggerStart, &mutex);
 
   if(cb->count || (start % cb->size) != cb->end) {
@@ -49,35 +48,8 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
   return ret;
 }
 
-
-void cbuff_print(cbuff_t * cb)
-{
-  int start = cb->start ;
-  int end = cb->end ;
-  int i, count = 0;
-  for(i = start; count < cb->count; i = (i + 1)%cb->size){
-    printf("Elem[%d] = %d\n", i, cb->buff[i]);
-    count++;
-    if(i == (end - 1)) {
-      break;
-    }
-  }
-}
-
-
 void cbuff_delete(cbuff_t * cb)
 {
   free(cb->buff);
   free(cb);
 }
-
-
-
-/*
-  if(cb->count && (end % cb->size) == cb->start) {
-    //printf("Overflow Elem[%d] %d lost\n", cb->start, cb->buff[cb->start]);
-    printf("Overflow element\n");
-    cb->start = (cb->start + 1 ) %cb->size;
-    cb->count--;
-
-*/

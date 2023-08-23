@@ -34,15 +34,16 @@ int main() {
     pthread_create(&readerThread, NULL, &reader, NULL);
     pthread_create(&analyzerThread, NULL, &analyzer, NULL);
     pthread_create(&printerThread, NULL, &printer, NULL);
-
+    pthread_create(&watchDogThread, NULL, &watchDog, NULL);
 
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
+    pthread_join(printerThread, NULL);
+    pthread_join(watchDogThread, NULL);
 
     pthread_mutex_destroy(&mutex);
     free(prevKS);
     free(cpuPercentage);
-
 
     return 0;
 }
