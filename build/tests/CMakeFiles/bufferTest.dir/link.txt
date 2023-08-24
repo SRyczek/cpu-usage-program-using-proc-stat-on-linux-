@@ -1,0 +1,1 @@
+/usr/bin/gcc  -Wall -Wextra -g -pthread -g CMakeFiles/bufferTest.dir/test1.c.o -o bufferTest  ../src/libinclude.a 

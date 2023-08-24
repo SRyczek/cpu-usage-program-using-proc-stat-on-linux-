@@ -1,0 +1,1 @@
+/usr/bin/gcc  -Wall -Wextra -g -pthread -g CMakeFiles/analyzerTest.dir/test1.c.o -o analyzerTest  ../src/libinclude.a 

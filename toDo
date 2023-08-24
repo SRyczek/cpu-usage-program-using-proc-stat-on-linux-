@@ -21,3 +21,17 @@ Pomysl na loggera:
 
 Kazdy watek bedzie mial dostepna tablice char[] ktora bedzie globalna. JEsli odczyta dane to wchodzi w sem_wait(). Watek powinien
 wtedy odczytac wszystkie tablice z kazdego watku. Inne powinny byc NULL czy puste. I zapisac do pliku
+
+project(TietoevryProject)  #the same name as root project
+
+# main code
+add_executable(analyzerTest test1.c)
+target_link_libraries(analyzerTest PRIVATE analyzer)
+
+# enable testing functionality
+enable_testing()
+
+add_test(
+  NAME analyzerTest
+  COMMAND $<TARGET_FILE:analyzerTest>
+  )

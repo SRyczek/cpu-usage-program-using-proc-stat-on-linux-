@@ -38,5 +38,10 @@
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",
   "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/main.dir/main.c.o -c /home/seb/Desktop/project_tietoevry/src/main.c",
   "file": "/home/seb/Desktop/project_tietoevry/src/main.c"
+},
+{
+  "directory": "/home/seb/Desktop/project_tietoevry/build/tests",
+  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/bufferTest.dir/test1.c.o -c /home/seb/Desktop/project_tietoevry/tests/test1.c",
+  "file": "/home/seb/Desktop/project_tietoevry/tests/test1.c"
 }
 ]

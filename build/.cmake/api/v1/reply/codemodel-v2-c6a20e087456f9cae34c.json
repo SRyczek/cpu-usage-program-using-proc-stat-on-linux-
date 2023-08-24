@@ -9,7 +9,8 @@
 					"childIndexes" : 
 					[
 						1,
-						2
+						2,
+						3
 					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
@@ -42,8 +43,23 @@
 					"source" : "src",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						1,
+						2
+					]
+				},
+				{
+					"build" : "tests",
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.15"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						0
 					]
 				}
 			],
@@ -55,18 +71,27 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					],
 					"name" : "TietoevryProject",
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 3,
+					"id" : "bufferTest::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-bufferTest-Debug-5d6df83255169bc4c4b9.json",
+					"name" : "bufferTest",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 2,
 					"id" : "include::@145eef247bfb46b6828c",

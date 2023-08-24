@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/seb/Desktop/project_tietoevry/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -142,6 +152,19 @@ include/fast:
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/build
 .PHONY : include/fast
 
+#=============================================================================
+# Target rules for targets named bufferTest
+
+# Build rule for target.
+bufferTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bufferTest
+.PHONY : bufferTest
+
+# fast build rule for target.
+bufferTest/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/bufferTest.dir/build.make tests/CMakeFiles/bufferTest.dir/build
+.PHONY : bufferTest/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -150,6 +173,8 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
+	@echo "... bufferTest"
 	@echo "... include"
 	@echo "... main"
 .PHONY : help

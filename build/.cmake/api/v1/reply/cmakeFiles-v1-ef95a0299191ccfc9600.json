@@ -161,6 +161,9 @@
 		},
 		{
 			"path" : "src/CMakeLists.txt"
+		},
+		{
+			"path" : "tests/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
