@@ -10,12 +10,6 @@ Aktualne toDO
 1. Zmodyfikowac problam aby minimalizowac liczbe wystapien i ogolnie ilosc zmiennych globalnych.
 2. Usunac printf z innych reader oraz analyzer bo przeciez moga wplywac na dzialanie programu.
 
-                    // printf("%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld\n", 
-                    //             kS[writeIdx].cpuNum,
-                    //             kS[writeIdx].user,   kS[writeIdx].nice, kS[writeIdx].system,  kS[writeIdx].idle, 
-                    //             kS[writeIdx].iowait, kS[writeIdx].irq,  kS[writeIdx].softirq, kS[writeIdx].steal,
-                    //             kS[writeIdx].guest,  kS[writeIdx].guest_nice);
-
 
 Pomysl na loggera:
 
@@ -24,14 +18,6 @@ wtedy odczytac wszystkie tablice z kazdego watku. Inne powinny byc NULL czy pust
 
 project(TietoevryProject)  #the same name as root project
 
-# main code
-add_executable(analyzerTest test1.c)
-target_link_libraries(analyzerTest PRIVATE analyzer)
+Sprawdzac czy wartosc nie moze byc podzielna przez 0.
 
-# enable testing functionality
-enable_testing()
-
-add_test(
-  NAME analyzerTest
-  COMMAND $<TARGET_FILE:analyzerTest>
-  )
+https://stackoverflow.com/questions/45814954/do-i-need-separate-files-for-each-test-with-ctest

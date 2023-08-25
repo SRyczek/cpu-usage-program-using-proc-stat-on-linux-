@@ -1,14 +1,17 @@
 #include "../include/lib.h"
 #include <assert.h>
 
+
 int main() {
 
-    cbuff_t* testCBuff;
-    testCBuff = cbuff_new(BUFFER_LENGHT);
+    /* verify cbuff_new */
 
-    assert(testCBuff->size == BUFFER_LENGHT);
+    cbuff_t* testCBuff = NULL;
+    int len = 12;
+    testCBuff = cbuff_new(len);
 
-
+    assert(testCBuff->size == len);
+    assert(&testCBuff != NULL);
 
     return 0;
 }

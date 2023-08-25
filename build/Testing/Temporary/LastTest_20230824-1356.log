@@ -1,18 +1,18 @@
-Start testing: Aug 24 17:21 CEST
+Start testing: Aug 24 23:09 CEST
 ----------------------------------------------------------
-1/1 Testing: BufferTest
-1/1 Test: BufferTest
-Command: "/home/seb/Desktop/project_tietoevry/build/tests/bufferTest"
+1/1 Testing: Test1
+1/1 Test: Test1
+Command: "/home/seb/Desktop/project_tietoevry/build/tests/bufferTest" "test1"
 Directory: /home/seb/Desktop/project_tietoevry/build/tests
-"BufferTest" start time: Aug 24 17:21 CEST
+"Test1" start time: Aug 24 23:09 CEST
 Output:
 ----------------------------------------------------------
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
 Test Passed.
-"BufferTest" end time: Aug 24 17:21 CEST
-"BufferTest" time elapsed: 00:00:00
+"Test1" end time: Aug 24 23:09 CEST
+"Test1" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 24 17:21 CEST
+End testing: Aug 24 23:09 CEST

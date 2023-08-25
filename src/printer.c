@@ -3,7 +3,7 @@
 
 void* printer() {
 
-    while(1) {
+    while(programActivity == PROGRAM_RUNS) {
 
         pthread_mutex_lock(&mutex);
         printf("cpu  USAGE %.2f %%\n", cpuPercentage[0]);

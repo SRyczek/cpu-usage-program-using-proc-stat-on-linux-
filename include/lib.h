@@ -14,6 +14,9 @@
 #define THREAD_WORKS 1
 #define THREAD_NOT_WORKING 0
 
+#define PROGRAM_RUNS 1
+#define PROGRAM_STOP 0
+
 
 typedef struct {
     char cpuNum[10];
@@ -57,6 +60,9 @@ extern cbuff_t* cBuff;
 extern volatile _Atomic int analyzerFlag;
 extern volatile _Atomic int readerFlag;
 extern volatile _Atomic int printerFlag;
+
+extern volatile _Atomic int programActivity;
+
 
 
 extern char readerLog[50];

@@ -3,7 +3,7 @@
 
 void* analyzer() {
 
-    while(1) {
+    while(programActivity == PROGRAM_RUNS) {
 
         long long nonIdle, prevNonIdle;
         long long prevIdle, Idle;

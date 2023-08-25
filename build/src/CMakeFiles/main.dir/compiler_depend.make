@@ -87,14 +87,63 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  /usr/include/signal.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
+  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h \
+  /usr/include/x86_64-linux-gnu/bits/siginfo-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigval_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h \
+  /usr/include/x86_64-linux-gnu/bits/sigevent-consts.h \
+  /usr/include/x86_64-linux-gnu/bits/sigaction.h \
+  /usr/include/x86_64-linux-gnu/bits/sigcontext.h \
+  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
+  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
+  /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
+  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
+  /usr/include/x86_64-linux-gnu/bits/signal_ext.h
 
+
+/usr/include/x86_64-linux-gnu/bits/signal_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigstksz.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigstack.h:
+
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigaction.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigval_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-consts.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigval_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/siginfo_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigcontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum-generic.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h:
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/confname.h:
 
@@ -107,6 +156,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum-arch.h:
 
 /usr/include/time.h:
 
@@ -125,6 +176,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/stdint.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
+
+/usr/include/x86_64-linux-gnu/bits/ss_flags.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
@@ -145,6 +198,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -168,6 +223,10 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
+/usr/include/x86_64-linux-gnu/bits/sigthread.h:
+
+/usr/include/x86_64-linux-gnu/bits/sigevent-consts.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/include/sched.h:
@@ -181,6 +240,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
+
+/usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
 
 /usr/include/strings.h:
 
@@ -233,6 +294,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/signal.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
 

@@ -2,7 +2,7 @@
 #include "../include/lib.h"
 
 void* reader() {
-    while(1) {
+    while(programActivity == PROGRAM_RUNS) {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
 

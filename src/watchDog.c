@@ -3,7 +3,7 @@
 
 
 void* watchDog() {
-    while(1) {
+    while(programActivity == PROGRAM_RUNS) {
 
         atomic_store(&analyzerFlag, THREAD_NOT_WORKING);
         atomic_store(&readerFlag, THREAD_NOT_WORKING);

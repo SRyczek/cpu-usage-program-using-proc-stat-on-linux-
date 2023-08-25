@@ -3,7 +3,7 @@
 
 void* logger() {
 
-    while(1) {
+    while(programActivity == PROGRAM_RUNS) {
         
         pthread_cond_wait(&loggerStart, &mutex);
         //zapisz do pliku
@@ -11,5 +11,5 @@ void* logger() {
         pthread_cond_broadcast(&loggerEnd);
 
     }
-
+    //return 0;
 }

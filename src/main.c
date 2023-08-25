@@ -1,7 +1,24 @@
 
 #include "../include/lib.h"
+#include <signal.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+
+void term(int signum)
+{
+    programActivity = PROGRAM_STOP;
+    pthread_mutex_destroy(&mutex);
+    free(prevKS);
+    free(cpuPercentage);
+    cbuff_delete(cBuff);
+
+    printf("Program stops\n");
+}
 
 int main() {
+
+    programActivity = PROGRAM_RUNS;
 
     /* calculate num of cores in hardware */
     long numCores = sysconf(_SC_NPROCESSORS_ONLN);
@@ -27,7 +44,14 @@ int main() {
 
     cBuff = cbuff_new(BUFFER_LENGHT);
 
+    struct sigaction action;
+    memset(&action, 0, sizeof(struct sigaction));
+    action.sa_handler = term;
+    sigaction(SIGTERM, &action, NULL);
+
+
     printf("Program starts\n\n");
+    printf("ID procesu (PID): %d\n", getpid());
 
     pthread_mutex_init(&mutex, NULL);
 
@@ -36,14 +60,12 @@ int main() {
     pthread_create(&printerThread, NULL, &printer, NULL);
     pthread_create(&watchDogThread, NULL, &watchDog, NULL);
 
+
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
     pthread_join(printerThread, NULL);
     pthread_join(watchDogThread, NULL);
 
-    pthread_mutex_destroy(&mutex);
-    free(prevKS);
-    free(cpuPercentage);
 
     return 0;
 }

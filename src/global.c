@@ -8,6 +8,9 @@ kernel_statistics_t *prevKS;
 volatile _Atomic int analyzerFlag;
 volatile _Atomic int readerFlag;
 volatile _Atomic int printerFlag;
+
+volatile _Atomic int programActivity;
+
 cbuff_t* cBuff;
 
 /* threads */

@@ -4,5 +4,5 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-add_test(BufferTest "bufferTest")
-set_tests_properties(BufferTest PROPERTIES  _BACKTRACE_TRIPLES "/home/seb/Desktop/project_tietoevry/tests/CMakeLists.txt;8;add_test;/home/seb/Desktop/project_tietoevry/tests/CMakeLists.txt;0;")
+add_test(Test1 "bufferTest" "test1")
+set_tests_properties(Test1 PROPERTIES  _BACKTRACE_TRIPLES "/home/seb/Desktop/project_tietoevry/tests/CMakeLists.txt;9;add_test;/home/seb/Desktop/project_tietoevry/tests/CMakeLists.txt;0;")
