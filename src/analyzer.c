@@ -1,5 +1,48 @@
 
-#include "../include/lib.h"
+#include "../include/global.h"
+#include "../include/buffer.h"
+#include "../include/analyzer.h"
+#include "../include/watchDog.h"
+
+/*
+initAnalyzer() dynamically allocates memory for arrays
+for prevKS(previous krenel statistic) and cpuPercentage.
+
+The number of elements is equal to the number of 
+processor cores plus one reserved for their sum.
+
+Additionally initAnalyzer() assigns the names of cores to specific array elements.
+
+analyzer() retrieves one element from the buffer and 
+checks by name which core it is. Next performs calculations
+for it using the previous values.
+
+*/
+
+kernel_statistics_t *prevKS;
+double *cpuPercentage;
+
+void initAnalyzer() {
+
+    /* allocate memory for previous kernel statistics array */
+    prevKS = (kernel_statistics_t *)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
+    cpuPercentage = (double *)malloc(numCoresPlusOne * sizeof(double));
+
+    /* set prevKS name to use in analyzer */
+    /* WARNING!
+        cpu index 0 is equal "cpu"
+        cpu index 1 is equal "cpu0"
+        cpu index 2 is equal "cpu1"
+        cpu index 3 is equal "cpu2"
+        ...
+    */
+    strcpy(prevKS[0].cpuNum, "cpu");
+    for (int i = 1; i < numCoresPlusOne; i++)
+    {
+        sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
+    }
+
+}
 
 void* analyzer() {
 
@@ -16,6 +59,8 @@ void* analyzer() {
         /* choose cpy by name */
         prevIdx = whichCpu(inputKs.cpuNum);
         
+        /* calculate cpu usege in percentage */
+
         prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
         prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
                         prevKS[prevIdx].system + prevKS[prevIdx].irq + prevKS[prevIdx].softirq + 
@@ -30,14 +75,20 @@ void* analyzer() {
         long long totalLd = total - prevTotal;
         long long idled = Idle - prevIdle;
 
-        cpuPercentage[prevIdx] = ((double)(totalLd - (double)idled) / (double)totalLd) * 100;
+        if(totalLd > 0) {
+            cpuPercentage[prevIdx] = ((double)(totalLd - (double)idled) / (double)totalLd) * 100;
 
-        /* assign previous values */
-        memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
+            /* assign previous values */
+            memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
+        } else {
+            /* numerator is less or equal 0 */
+            /* DO NOTHING */
+        }
 
         atomic_store(&analyzerFlag, THREAD_WORKS);
 
     }
+    return 0;
 
 }
 

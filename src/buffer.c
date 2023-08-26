@@ -1,5 +1,22 @@
 
-#include "../include/lib.h"
+#include "../include/buffer.h"
+
+/*
+In this file buffer implementation is included.
+
+cbuff_new() creates structure cbuff_t which 
+includes counters, buffer size and space for elements(kernel_statistics_t).
+
+cbuff_add() adds the item to the buffer.If buffor is full
+function call pthread_cond_wait() until some element is removed.
+
+cbuff_remove() removes element from buffor and returns it in place of
+the function call. If buffer is empty function call pthread_cond_wait() until some element 
+is added.
+
+cbuff_delete() deletes buffer and frees memory.
+
+*/
 
 cbuff_t* cbuff_new(int size) {
   cbuff_t * cb = (cbuff_t*)malloc(sizeof(cbuff_t));

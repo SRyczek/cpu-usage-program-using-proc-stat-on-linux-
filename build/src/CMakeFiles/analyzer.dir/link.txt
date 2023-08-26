@@ -1,0 +1,1 @@
+/usr/bin/gcc  -Wall -Wextra -g -pthread -g CMakeFiles/analyzer.dir/analyzer.c.o -o analyzer 

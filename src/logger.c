@@ -1,5 +1,5 @@
 
-#include "../include/lib.h"
+#include "../include/global.h"
 
 void* logger() {
 

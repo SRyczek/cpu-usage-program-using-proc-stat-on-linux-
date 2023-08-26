@@ -3,7 +3,7 @@
 
 src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -87,12 +87,17 @@ src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/buffer.h \
+  ../include/global.h \
+  ../include/analyzer.h \
+  ../include/watchDog.h
 
 src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
-  /usr/include/stdio.h \
+  ../include/buffer.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
+  /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
@@ -102,11 +107,16 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/x86_64-linux-gnu/bits/long-double.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types.h \
   /usr/include/x86_64-linux-gnu/bits/typesizes.h \
   /usr/include/x86_64-linux-gnu/bits/time64.h \
+  /usr/include/x86_64-linux-gnu/bits/wchar.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
+  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+  ../include/global.h \
+  /usr/include/stdio.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h \
@@ -124,7 +134,6 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endian.h \
   /usr/include/x86_64-linux-gnu/bits/endianness.h \
@@ -148,10 +157,6 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/strings.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/x86_64-linux-gnu/bits/wchar.h \
-  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/x86_64-linux-gnu/bits/sched.h \
@@ -179,7 +184,7 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
 
 src/CMakeFiles/include.dir/global.c.o: ../src/global.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -263,11 +268,13 @@ src/CMakeFiles/include.dir/global.c.o: ../src/global.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/buffer.h \
+  ../include/global.h
 
 src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -355,7 +362,7 @@ src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
 
 src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -439,11 +446,13 @@ src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/analyzer.h \
+  ../include/watchDog.h
 
 src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -527,11 +536,14 @@ src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/buffer.h \
+  ../include/global.h \
+  ../include/watchDog.h
 
 src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -615,7 +627,8 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/watchDog.h
 
 
 ../src/watchDog.c:
@@ -628,6 +641,10 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 ../src/buffer.c:
 
+../include/analyzer.h:
+
+../include/buffer.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h:
 
 /usr/include/x86_64-linux-gnu/sys/time.h:
@@ -639,6 +656,8 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/unistd.h:
+
+../include/watchDog.h:
 
 /usr/include/semaphore.h:
 
@@ -722,6 +741,8 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 /usr/include/stdio.h:
 
+../include/global.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
@@ -769,8 +790,6 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
-
-../include/lib.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 

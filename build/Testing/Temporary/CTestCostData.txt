@@ -1,5 +1,5 @@
 AnalyzerTest 9 0.00186415
 BufferTest 8 0.00202863
-Test1 5 0.00245544
+Test1 6 0.00222527
 Test2 4 0.00178818
 ---

@@ -1,6 +1,7 @@
-#include "../include/lib.h"
-#include <assert.h>
 
+#include "../include/global.h"
+#include "../include/buffer.h"
+#include <assert.h>
 
 int main() {
 

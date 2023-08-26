@@ -1,5 +1,8 @@
 
-#include "../include/lib.h"
+#include "../include/global.h"
+#include "../include/analyzer.h"
+#include "../include/watchDog.h"
+
 
 void* printer() {
 

@@ -1,6 +1,11 @@
 
-#include "../include/lib.h"
+#include "../include/global.h"
+#include "../include/watchDog.h"
 
+
+volatile _Atomic int analyzerFlag;
+volatile _Atomic int readerFlag;
+volatile _Atomic int printerFlag;
 
 void* watchDog() {
     while(programActivity == PROGRAM_RUNS) {

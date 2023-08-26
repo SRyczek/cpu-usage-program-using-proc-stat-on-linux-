@@ -3,7 +3,7 @@
 
 tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c \
   /usr/include/stdc-predef.h \
-  ../include/lib.h \
+  ../include/global.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -88,10 +88,14 @@ tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/buffer.h \
+  ../include/global.h \
   /usr/include/assert.h
 
 
 /usr/include/assert.h:
+
+../include/buffer.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h:
 
@@ -187,6 +191,8 @@ tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c \
 
 /usr/include/stdio.h:
 
+../include/global.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
@@ -232,8 +238,6 @@ tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c \
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/environments.h:
-
-../include/lib.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 

@@ -1,7 +1,13 @@
 
-#include "../include/lib.h"
+#include "../include/global.h"
+#include "../include/buffer.h"
+#include "../include/watchDog.h"
+
 
 void* reader() {
+
+    kernel_statistics_t kS;
+    
     while(programActivity == PROGRAM_RUNS) {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
