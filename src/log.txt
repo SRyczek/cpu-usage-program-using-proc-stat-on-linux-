@@ -1,0 +1,25 @@
+printer2 works correctly
+printer works correctly
+printer2 works correctly
+printer works correctly
+printer2 works correctly
+printer works correctly
+printer2 works correctly
+[2023-08-28 00:03:23] printer works correctly
+[2023-08-28 00:03:23] printer2 works correctly
+[2023-08-28 00:03:24] printer works correctly
+[2023-08-28 00:03:24] printer2 works correctly
+[2023-08-28 00:03:25] printer works correctly
+[2023-08-28 00:03:25] printer2 works correctly
+[2023-08-28 00:03:26] printer works correctly
+[2023-08-28 00:03:26] printer2 works correctly
+[2023-08-28 00:03:27] printer works correctly
+[2023-08-28 00:03:27] printer2 works correctly
+[2023-08-28 00:04:43] printer works correctly
+[2023-08-28 00:04:43] printer2 works correctly
+[2023-08-28 00:04:44] printer works correctly
+[2023-08-28 00:04:44] printer2 works correctly
+[2023-08-28 00:04:45] printer works correctly
+[2023-08-28 00:04:45] printer2 works correctly
+[2023-08-28 00:04:46] printer works correctly
+[2023-08-28 00:04:46] printer2 works correctly

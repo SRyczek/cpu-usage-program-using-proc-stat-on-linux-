@@ -89,7 +89,6 @@ src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/buffer.h \
-  ../include/global.h \
   ../include/analyzer.h \
   ../include/watchDog.h
 
@@ -269,8 +268,7 @@ src/CMakeFiles/include.dir/global.c.o: ../src/global.c \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
-  ../include/buffer.h \
-  ../include/global.h
+  ../include/buffer.h
 
 src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
   /usr/include/stdc-predef.h \
@@ -358,7 +356,10 @@ src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+  ../include/buffer.h \
+  ../include/logger.h \
+  ../include/buffer.h
 
 src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
   /usr/include/stdc-predef.h \
@@ -448,7 +449,8 @@ src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/analyzer.h \
-  ../include/watchDog.h
+  ../include/watchDog.h \
+  ../include/buffer.h
 
 src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
   /usr/include/stdc-predef.h \
@@ -538,7 +540,6 @@ src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/buffer.h \
-  ../include/global.h \
   ../include/watchDog.h
 
 src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
@@ -634,6 +635,8 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 ../src/watchDog.c:
 
 ../src/reader.c:
+
+../include/logger.h:
 
 ../src/global.c:
 

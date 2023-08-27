@@ -71,6 +71,12 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+  /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+  /usr/include/x86_64-linux-gnu/bits/stat.h \
+  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+  /usr/include/x86_64-linux-gnu/sys/stat.h \
   ../include/global.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
@@ -110,16 +116,17 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/buffer.h \
-  ../include/global.h \
   ../include/analyzer.h \
   ../include/printer.h \
   ../include/reader.h \
-  ../include/watchDog.h
+  ../include/watchDog.h \
+  ../include/logger.h \
+  ../include/buffer.h
 
+
+../include/logger.h:
 
 ../include/analyzer.h:
-
-../include/buffer.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h:
 
@@ -175,11 +182,23 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 
 ../include/global.h:
 
+/usr/include/x86_64-linux-gnu/sys/stat.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_stat.h:
+
+../include/buffer.h:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl-linux.h:
+
+/usr/include/fcntl.h:
+
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/fcntl.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/sigevent_t.h:
 
@@ -304,6 +323,8 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/bits/stat.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 

@@ -89,7 +89,6 @@ tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/buffer.h \
-  ../include/global.h \
   /usr/include/assert.h
 
 

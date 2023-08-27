@@ -2,7 +2,7 @@
 #include "../include/global.h"
 #include "../include/analyzer.h"
 #include "../include/watchDog.h"
-
+#include "../include/buffer.h"
 /*
 
 Thread printer prints messages depending on the number of cores
@@ -23,6 +23,10 @@ void* printer() {
         pthread_mutex_unlock(&mutex);
         printf("\n");
         atomic_store(&printerFlag, THREAD_WORKS);
+
+        logger_cbuff_add(loggerCBuff, 0);
+        logger_cbuff_add(loggerCBuff, 1);
+
     }
 
     return 0;

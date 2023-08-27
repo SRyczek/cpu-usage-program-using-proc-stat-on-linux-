@@ -73,4 +73,7 @@ src/CMakeFiles/include.dir/logger.c.o: \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/buffer.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/logger.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/buffer.h

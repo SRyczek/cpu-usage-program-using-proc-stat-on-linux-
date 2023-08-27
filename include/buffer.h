@@ -4,7 +4,6 @@
 #define BUFFER_H
 
 #include <stdint.h>
-#include "../include/global.h"
 
 typedef struct {
     char cpuNum[10];
@@ -30,7 +29,7 @@ typedef struct cbuff_{
 } cbuff_t;
 
 typedef struct log_cbuff_{
-    char* buff;
+    int* buff;
     int start;
     int end;
     int size;
@@ -39,6 +38,7 @@ typedef struct log_cbuff_{
 
 extern kernel_statistics_t *prevKS;
 extern cbuff_t* cBuff;
+extern log_cbuff_t* loggerCBuff;
 
 /*buffor */
 cbuff_t* cbuff_new(int size);
@@ -47,5 +47,7 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb);
 void cbuff_delete(cbuff_t * cb);
 
 log_cbuff_t* logger_cbuff_new(int size);
+void logger_cbuff_add(log_cbuff_t * cb, int elem);
+int logger_cbuff_remove(log_cbuff_t * cb);
 
 #endif

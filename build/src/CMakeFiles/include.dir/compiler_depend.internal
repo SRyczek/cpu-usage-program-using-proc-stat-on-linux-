@@ -90,7 +90,6 @@ src/CMakeFiles/include.dir/analyzer.c.o
  /usr/include/x86_64-linux-gnu/sys/time.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
  /home/seb/Desktop/project_tietoevry/include/buffer.h
- /home/seb/Desktop/project_tietoevry/include/global.h
  /home/seb/Desktop/project_tietoevry/include/analyzer.h
  /home/seb/Desktop/project_tietoevry/include/watchDog.h
 
@@ -273,7 +272,6 @@ src/CMakeFiles/include.dir/global.c.o
  /usr/include/x86_64-linux-gnu/sys/time.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
  /home/seb/Desktop/project_tietoevry/include/buffer.h
- /home/seb/Desktop/project_tietoevry/include/global.h
 
 src/CMakeFiles/include.dir/logger.c.o
  /home/seb/Desktop/project_tietoevry/src/logger.c
@@ -363,6 +361,9 @@ src/CMakeFiles/include.dir/logger.c.o
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h
  /usr/include/x86_64-linux-gnu/sys/time.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
+ /home/seb/Desktop/project_tietoevry/include/buffer.h
+ /home/seb/Desktop/project_tietoevry/include/logger.h
+ /home/seb/Desktop/project_tietoevry/include/buffer.h
 
 src/CMakeFiles/include.dir/printer.c.o
  /home/seb/Desktop/project_tietoevry/src/printer.c
@@ -454,6 +455,7 @@ src/CMakeFiles/include.dir/printer.c.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
  /home/seb/Desktop/project_tietoevry/include/analyzer.h
  /home/seb/Desktop/project_tietoevry/include/watchDog.h
+ /home/seb/Desktop/project_tietoevry/include/buffer.h
 
 src/CMakeFiles/include.dir/reader.c.o
  /home/seb/Desktop/project_tietoevry/src/reader.c
@@ -544,7 +546,6 @@ src/CMakeFiles/include.dir/reader.c.o
  /usr/include/x86_64-linux-gnu/sys/time.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
  /home/seb/Desktop/project_tietoevry/include/buffer.h
- /home/seb/Desktop/project_tietoevry/include/global.h
  /home/seb/Desktop/project_tietoevry/include/watchDog.h
 
 src/CMakeFiles/include.dir/watchDog.c.o

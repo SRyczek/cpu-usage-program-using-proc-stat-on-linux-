@@ -4,12 +4,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 #include "../include/global.h"
 #include "../include/buffer.h"
 #include "../include/analyzer.h"
 #include "../include/printer.h"
 #include "../include/reader.h"
 #include "../include/watchDog.h"
+#include "../include/logger.h"
 
 int main() {
 
@@ -28,12 +31,14 @@ int main() {
     initAnalyzer();
     initSigterm();
 
+    pthread_mutex_init(&mutex, NULL);
+    pthread_cond_init(&loggerStart, NULL);
+
     cBuff = cbuff_new(bufferLen);
+    loggerCBuff = logger_cbuff_new(LOGGER_LENGTH);
 
     printf("Program starts\n\n");
     printf("ID procesu (PID): %d\n", getpid());
-
-    pthread_mutex_init(&mutex, NULL);
 
 
     pthread_create(&readerThread, NULL, &reader, NULL);
@@ -41,11 +46,14 @@ int main() {
     pthread_create(&watchDogThread, NULL, &watchDog, NULL);
     usleep(500000);
     pthread_create(&printerThread, NULL, &printer, NULL);
+    pthread_create(&loggerThread, NULL, &logger, NULL);
+
 
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
     pthread_join(watchDogThread, NULL);
     pthread_join(printerThread, NULL);
+    pthread_join(loggerThread, NULL);
 
     return 0;
 }

@@ -46,7 +46,7 @@ void initAnalyzer() {
 void* analyzer() {
 
     while(programActivity == PROGRAM_RUNS) {
-
+        
         long long nonIdle = 0;
         long long prevNonIdle = 0;
         long long prevIdle = 0;
@@ -61,9 +61,8 @@ void* analyzer() {
 
         /* choose cpy by name */
         prevIdx = whichCpu(inputKs.cpuNum);
-        
-        /* calculate cpu usege in percentage */
 
+        /* calculate cpu usege in percentage */
         prevIdle = prevKS[prevIdx].idle + prevKS[prevIdx].iowait;
         prevNonIdle = prevKS[prevIdx].user + prevKS[prevIdx].nice + 
                         prevKS[prevIdx].system + prevKS[prevIdx].irq + prevKS[prevIdx].softirq + 
@@ -81,12 +80,15 @@ void* analyzer() {
         if (totalLd != 0) {
             pthread_mutex_lock(&mutex);
             cpuPercentage[prevIdx] = ((double)(totalLd - (double)idled) / (double)totalLd) * 100;
+
             pthread_mutex_unlock(&mutex);
             /* assign previous values */
             memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
+            
         } else {
             /* numerator is less or equal 0 */
             /* DO NOTHING */
+            printf("ERROR /0\n");
         }
 
         atomic_store(&analyzerFlag, THREAD_WORKS);

@@ -1,4 +1,6 @@
 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -12,15 +14,14 @@
 #define BUFFER_MULTIPLIER 12
 #define THREAD_WORKS 1
 #define THREAD_NOT_WORKING 0
-#define LOGGER_MESSAGE_LENGTH 50
+#define LOGGER_LENGTH 100
+
 
 #define PROGRAM_RUNS 1
 #define PROGRAM_STOP 0
 
 extern pthread_mutex_t mutex;
 extern pthread_cond_t loggerStart;
-extern pthread_cond_t loggerEnd;
-
 extern volatile _Atomic int programActivity;
 
 /* The number of cores plus one is required because 

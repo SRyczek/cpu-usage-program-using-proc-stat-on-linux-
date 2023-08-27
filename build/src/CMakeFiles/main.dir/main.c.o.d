@@ -63,7 +63,12 @@ src/CMakeFiles/main.dir/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/confname.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
- /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+ /usr/include/x86_64-linux-gnu/bits/unistd_ext.h /usr/include/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl.h \
+ /usr/include/x86_64-linux-gnu/bits/fcntl-linux.h \
+ /usr/include/x86_64-linux-gnu/bits/stat.h \
+ /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
+ /usr/include/x86_64-linux-gnu/sys/stat.h \
  /home/seb/Desktop/project_tietoevry/src/../include/global.h \
  /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -95,8 +100,9 @@ src/CMakeFiles/main.dir/main.c.o: \
  /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
  /home/seb/Desktop/project_tietoevry/src/../include/buffer.h \
- /home/seb/Desktop/project_tietoevry/src/../include/../include/global.h \
  /home/seb/Desktop/project_tietoevry/src/../include/analyzer.h \
  /home/seb/Desktop/project_tietoevry/src/../include/printer.h \
  /home/seb/Desktop/project_tietoevry/src/../include/reader.h \
- /home/seb/Desktop/project_tietoevry/src/../include/watchDog.h
+ /home/seb/Desktop/project_tietoevry/src/../include/watchDog.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/logger.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/buffer.h

@@ -75,5 +75,4 @@ src/CMakeFiles/include.dir/reader.c.o: \
  /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
  /home/seb/Desktop/project_tietoevry/src/../include/buffer.h \
- /home/seb/Desktop/project_tietoevry/src/../include/../include/global.h \
  /home/seb/Desktop/project_tietoevry/src/../include/watchDog.h
