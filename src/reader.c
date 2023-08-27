@@ -3,6 +3,17 @@
 #include "../include/buffer.h"
 #include "../include/watchDog.h"
 
+/*
+
+Reader thread opens the /proc/stat file using the fopen function.
+Reads data via foben function and writes to kS, which is type of kernel_statistics_t.
+After saving the data, it adds it to the buffer and close the file.
+
+The delay in this thread was introduced due to the length of 
+the measurement of calculations taken from /proc/stat.
+
+*/
+
 
 void* reader() {
 
@@ -33,5 +44,7 @@ void* reader() {
         atomic_store(&readerFlag, THREAD_WORKS);
 
     }
+
+    return 0;
 
 }

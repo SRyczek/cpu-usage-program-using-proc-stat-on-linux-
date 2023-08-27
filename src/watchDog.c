@@ -2,6 +2,16 @@
 #include "../include/global.h"
 #include "../include/watchDog.h"
 
+/*
+
+WatchDog thread checks that other threads are still running.
+For verification, it uses variables dedicated to each thread, 
+which are of type volatile _Atomic int.
+
+Thread writes the value THREAD_NOT_WORKING into the flags waits 2 seconds 
+and if the threads do not change this value the program ends.
+
+*/
 
 volatile _Atomic int analyzerFlag;
 volatile _Atomic int readerFlag;
@@ -31,4 +41,5 @@ void* watchDog() {
         }
 
     }
+    return 0;
 }

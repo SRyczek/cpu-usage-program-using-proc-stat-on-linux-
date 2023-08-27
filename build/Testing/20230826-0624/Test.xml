@@ -24,8 +24,8 @@
 	ProcessorClockFrequency="2304.01"
 	>
 	<Testing>
-		<StartDateTime>Aug 26 09:09 CEST</StartDateTime>
-		<StartTestTime>1693033745</StartTestTime>
+		<StartDateTime>Aug 27 01:13 CEST</StartDateTime>
+		<StartTestTime>1693091591</StartTestTime>
 		<TestList>
 			<Test>./tests/Test1</Test>
 		</TestList>
@@ -36,7 +36,7 @@
 			<FullCommandLine>/home/seb/Desktop/project_tietoevry/build/tests/bufferTest "test1"</FullCommandLine>
 			<Results>
 				<NamedMeasurement type="numeric/double" name="Execution Time">
-					<Value>0.00107442</Value>
+					<Value>0.0058549</Value>
 				</NamedMeasurement>
 				<NamedMeasurement type="numeric/double" name="Processors">
 					<Value>1</Value>
@@ -55,8 +55,8 @@
 				</Measurement>
 			</Results>
 		</Test>
-		<EndDateTime>Aug 26 09:09 CEST</EndDateTime>
-		<EndTestTime>1693033745</EndTestTime>
+		<EndDateTime>Aug 27 01:13 CEST</EndDateTime>
+		<EndTestTime>1693091591</EndTestTime>
 		<ElapsedMinutes>0</ElapsedMinutes>
 	</Testing>
 </Site>

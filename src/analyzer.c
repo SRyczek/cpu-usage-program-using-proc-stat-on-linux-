@@ -20,14 +20,13 @@ for it using the previous values.
 */
 
 kernel_statistics_t *prevKS;
-double *cpuPercentage;
+double *cpuPercentage = NULL;
 
 void initAnalyzer() {
 
     /* allocate memory for previous kernel statistics array */
-    prevKS = (kernel_statistics_t *)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
-    cpuPercentage = (double *)malloc(numCoresPlusOne * sizeof(double));
-
+    prevKS = (kernel_statistics_t*)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
+    cpuPercentage = (double*)malloc(numCoresPlusOne * sizeof(double));
     /* set prevKS name to use in analyzer */
     /* WARNING!
         cpu index 0 is equal "cpu"
@@ -48,11 +47,15 @@ void* analyzer() {
 
     while(programActivity == PROGRAM_RUNS) {
 
-        long long nonIdle, prevNonIdle;
-        long long prevIdle, Idle;
-        long long prevTotal, total;
-
-        uint8_t prevIdx;
+        long long nonIdle = 0;
+        long long prevNonIdle = 0;
+        long long prevIdle = 0;
+        long long Idle = 0;
+        long long prevTotal = 0; 
+        long long total = 0;
+        long long totalLd = 0; 
+        long long idled = 0;
+        uint8_t prevIdx = 0;
 
         kernel_statistics_t inputKs = cbuff_remove(cBuff);
 
@@ -72,12 +75,13 @@ void* analyzer() {
         prevTotal = prevNonIdle + prevIdle;
         total = nonIdle + Idle;
 
-        long long totalLd = total - prevTotal;
-        long long idled = Idle - prevIdle;
+        totalLd = total - prevTotal;
+        idled = Idle - prevIdle;
 
-        if(totalLd > 0) {
+        if (totalLd != 0) {
+            pthread_mutex_lock(&mutex);
             cpuPercentage[prevIdx] = ((double)(totalLd - (double)idled) / (double)totalLd) * 100;
-
+            pthread_mutex_unlock(&mutex);
             /* assign previous values */
             memcpy(&prevKS[prevIdx], &inputKs, sizeof(inputKs));
         } else {

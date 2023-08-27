@@ -5,6 +5,7 @@
         "stdlib.h": "c",
         "analyzer.h": "c",
         "atomic": "cpp",
-        "global.h": "c"
+        "global.h": "c",
+        "watchdog.h": "c"
     }
 }

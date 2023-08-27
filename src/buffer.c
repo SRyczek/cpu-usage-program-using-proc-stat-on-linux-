@@ -18,16 +18,26 @@ cbuff_delete() deletes buffer and frees memory.
 
 */
 
+
 cbuff_t* cbuff_new(int size) {
   cbuff_t * cb = (cbuff_t*)malloc(sizeof(cbuff_t));
   memset(cb, 0, sizeof(cbuff_t));
   cb->size = size;
-  cb->buff = (kernel_statistics_t*)malloc(sizeof(kernel_statistics_t)*size);
+  cb->buff = (kernel_statistics_t*)malloc(sizeof(kernel_statistics_t) * size);
   
   return cb;
 }
 
-void cbuff_add(cbuff_t * cb, kernel_statistics_t elem) {
+log_cbuff_t* logger_cbuff_new(int size) {
+  log_cbuff_t * cb = (log_cbuff_t*)malloc(sizeof(log_cbuff_t));
+  memset(cb, 0, sizeof(log_cbuff_t));
+  cb->size = size;
+  cb->buff = (char*)malloc(sizeof(char) * size);
+  
+  return cb;
+}
+
+void cbuff_add(cbuff_t* cb, kernel_statistics_t elem) {
   pthread_mutex_lock(&mutex);
   int end = cb->end;
   while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&loggerEnd, &mutex);
@@ -35,6 +45,22 @@ void cbuff_add(cbuff_t * cb, kernel_statistics_t elem) {
   //printf("Added Elem[%d] = %d\n",cb->end, elem);
   //printf("Added element\n");
   cb->buff[cb->end] = elem;
+  cb->end = (cb->end+1) % cb->size;
+  cb->count++;
+
+  //printf("From Add Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
+  pthread_cond_signal(&loggerStart); 
+  pthread_mutex_unlock(&mutex);
+}
+
+void logger_cbuff_add(log_cbuff_t* cb, char* elem) {
+  pthread_mutex_lock(&mutex);
+  int end = cb->end;
+  while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&loggerEnd, &mutex);
+
+  //printf("Added Elem[%d] = %d\n",cb->end, elem);
+  //printf("Added element\n");
+  memcpy(cb->buff[cb->end], elem, sizeof(elem));
   cb->end = (cb->end+1) % cb->size;
   cb->count++;
 

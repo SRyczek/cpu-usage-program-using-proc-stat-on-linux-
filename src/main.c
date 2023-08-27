@@ -11,15 +11,10 @@
 #include "../include/reader.h"
 #include "../include/watchDog.h"
 
-cbuff_t* cBuff;
-
-pthread_t readerThread, analyzerThread, printerThread, watchDogThread, loggerThread;
-/* The number of cores plus one is required because 
-you have to take into account the sum of all the */
-long numCoresPlusOne;
-
-
 int main() {
+
+
+    pthread_t readerThread, analyzerThread, printerThread, watchDogThread, loggerThread;
 
     /* set threads to RUN */
     programActivity = PROGRAM_RUNS;
@@ -32,7 +27,7 @@ int main() {
 
     initAnalyzer();
     initSigterm();
-    
+
     cBuff = cbuff_new(bufferLen);
 
     printf("Program starts\n\n");
@@ -43,18 +38,20 @@ int main() {
 
     pthread_create(&readerThread, NULL, &reader, NULL);
     pthread_create(&analyzerThread, NULL, &analyzer, NULL);
-    pthread_create(&printerThread, NULL, &printer, NULL);
     pthread_create(&watchDogThread, NULL, &watchDog, NULL);
+    usleep(500000);
+    pthread_create(&printerThread, NULL, &printer, NULL);
 
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
-    pthread_join(printerThread, NULL);
     pthread_join(watchDogThread, NULL);
+    pthread_join(printerThread, NULL);
 
     return 0;
 }
 
 void term() {
+    /* free all memory, destroy mutex and stops all threads */
     programActivity = PROGRAM_STOP;
     pthread_mutex_destroy(&mutex);
     free(prevKS);
