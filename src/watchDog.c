@@ -1,7 +1,7 @@
 
 #include "../include/global.h"
 #include "../include/watchDog.h"
-
+#include "../include/logger.h"
 /*
 
 WatchDog thread checks that other threads are still running.
@@ -27,15 +27,15 @@ void* watchDog() {
         sleep(2);
 
         if(atomic_load(&analyzerFlag) == THREAD_NOT_WORKING) {
-            printf("Analyzer is not working\n");
+            logger_cbuff_add(loggerCBuff, 3);
             sleep(3);
             exit(0);
         } else if (atomic_load(&readerFlag) == THREAD_NOT_WORKING){
-            printf("Reader is not working\n");
+            logger_cbuff_add(loggerCBuff, 4);
             sleep(3);
             exit(0);
         } else if (atomic_load(&printerFlag) == THREAD_NOT_WORKING) {
-            printf("Printer is not working\n");
+            logger_cbuff_add(loggerCBuff, 5);
             sleep(3);
             exit(0); 
         }

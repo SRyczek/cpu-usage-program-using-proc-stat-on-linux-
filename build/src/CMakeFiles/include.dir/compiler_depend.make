@@ -629,7 +629,9 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
-  ../include/watchDog.h
+  ../include/watchDog.h \
+  ../include/logger.h \
+  ../include/buffer.h
 
 
 ../src/watchDog.c:

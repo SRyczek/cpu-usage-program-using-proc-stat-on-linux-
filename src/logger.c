@@ -4,18 +4,22 @@
 #include "../include/logger.h"
 
 const char* logMessageToFile[] = {
-    "printer works correctly",
-    "printer2 works correctly",
+    "Program starts",                                                       /* Idx 0 */
+    "Reader correctly open file",                                           /* Idx 1 */
+    "Error opening file in reader",                                         /* Idx 2 */
+    "Watchdog has detected that the analyzer is not working properly",      /* Idx 3 */    
+    "Watchdog has detected that the reader is not working properly",        /* Idx 4 */
+    "Watchdog has detected that the printer is not working properly",       /* Idx 5 */
+    "In the analyzer was performed division by zero",                       /* Idx 6 */
+    "WhichCpu function reports an error"                                    /* Idx 7 */
 };
 
-
 void* logger() {
-
 
     time_t currentTime;
     struct tm *timeInfo;
     char timeString[30];
-    
+
     while(programActivity == PROGRAM_RUNS) {
 
         pthread_mutex_lock(&mutex);

@@ -47,14 +47,9 @@ void* analyzer() {
 
     while(programActivity == PROGRAM_RUNS) {
         
-        long long nonIdle = 0;
-        long long prevNonIdle = 0;
-        long long prevIdle = 0;
-        long long Idle = 0;
-        long long prevTotal = 0; 
-        long long total = 0;
-        long long totalLd = 0; 
-        long long idled = 0;
+        long long nonIdle, prevNonIdle, prevIdle, Idle, prevTotal,
+                  total, totalLd, idled;
+
         uint8_t prevIdx = 0;
 
         kernel_statistics_t inputKs = cbuff_remove(cBuff);
@@ -88,7 +83,8 @@ void* analyzer() {
         } else {
             /* numerator is less or equal 0 */
             /* DO NOTHING */
-            printf("ERROR /0\n");
+            logger_cbuff_add(loggerCBuff, 6);
+
         }
 
         atomic_store(&analyzerFlag, THREAD_WORKS);
@@ -105,7 +101,7 @@ uint8_t whichCpu(char* n) {
             return i;
         } 
     }
-    printf("whichCpu error\n");
+    logger_cbuff_add(loggerCBuff, 7);
     return 0;
 
 }

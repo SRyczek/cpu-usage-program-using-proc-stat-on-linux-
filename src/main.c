@@ -40,6 +40,7 @@ int main() {
     printf("Program starts\n\n");
     printf("ID procesu (PID): %d\n", getpid());
 
+    logger_cbuff_add(loggerCBuff, 0);
 
     pthread_create(&readerThread, NULL, &reader, NULL);
     pthread_create(&analyzerThread, NULL, &analyzer, NULL);
@@ -65,7 +66,7 @@ void term() {
     free(prevKS);
     free(cpuPercentage);
     cbuff_delete(cBuff);
-
+    cbuff_delete(loggerCBuff);
     printf("Program stops\n");
 
     exit(0);

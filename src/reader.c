@@ -22,7 +22,7 @@ void* reader() {
     while(programActivity == PROGRAM_RUNS) {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
-
+            logger_cbuff_add(loggerCBuff, 1);
             for (int i = 0; i < numCoresPlusOne; i++) {
                 fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
                             kS.cpuNum,
@@ -37,6 +37,7 @@ void* reader() {
             fclose(file);
         } else {
             perror("Error opening file\n");
+            logger_cbuff_add(loggerCBuff, 2);
         }
             
         usleep(1000000);

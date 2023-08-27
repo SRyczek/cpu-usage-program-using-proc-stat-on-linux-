@@ -24,8 +24,6 @@ void* printer() {
         printf("\n");
         atomic_store(&printerFlag, THREAD_WORKS);
 
-        logger_cbuff_add(loggerCBuff, 0);
-        logger_cbuff_add(loggerCBuff, 1);
 
     }
 
