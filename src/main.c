@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/stat.h>
-#include "../include/global.h"
+#include "../include/global_variables.h"
 #include "../include/buffer.h"
 #include "../include/analyzer.h"
 #include "../include/printer.h"
@@ -15,7 +15,6 @@
 #include "../include/logger.h"
 
 int main() {
-
 
     pthread_t readerThread, analyzerThread, printerThread, watchDogThread, loggerThread;
 

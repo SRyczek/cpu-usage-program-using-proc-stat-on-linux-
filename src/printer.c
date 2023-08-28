@@ -1,5 +1,5 @@
 
-#include "../include/global.h"
+#include "../include/global_variables.h"
 #include "../include/analyzer.h"
 #include "../include/watchDog.h"
 #include "../include/buffer.h"
@@ -23,8 +23,6 @@ void* printer() {
         pthread_mutex_unlock(&mutex);
         printf("\n");
         atomic_store(&printerFlag, THREAD_WORKS);
-
-
     }
 
     return 0;

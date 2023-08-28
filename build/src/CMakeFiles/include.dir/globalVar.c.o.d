@@ -1,7 +1,7 @@
-src/CMakeFiles/include.dir/watchDog.c.o: \
- /home/seb/Desktop/project_tietoevry/src/watchDog.c \
+src/CMakeFiles/include.dir/globalVar.c.o: \
+ /home/seb/Desktop/project_tietoevry/src/globalVar.c \
  /usr/include/stdc-predef.h \
- /home/seb/Desktop/project_tietoevry/src/../include/global_variables.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/globalVar.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -74,6 +74,4 @@ src/CMakeFiles/include.dir/watchDog.c.o: \
  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
  /usr/include/x86_64-linux-gnu/sys/time.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
- /home/seb/Desktop/project_tietoevry/src/../include/watchDog.h \
- /home/seb/Desktop/project_tietoevry/src/../include/logger.h \
  /home/seb/Desktop/project_tietoevry/src/../include/buffer.h

@@ -1,5 +1,5 @@
 
-#include "../include/global.h"
+#include "../include/global_variables.h"
 #include "../include/buffer.h"
 #include "../include/analyzer.h"
 #include "../include/watchDog.h"
@@ -36,8 +36,7 @@ void initAnalyzer() {
         ...
     */
     strcpy(prevKS[0].cpuNum, "cpu");
-    for (int i = 1; i < numCoresPlusOne; i++)
-    {
+    for (int i = 1; i < numCoresPlusOne; i++) {
         sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
     }
 
@@ -45,14 +44,16 @@ void initAnalyzer() {
 
 void* analyzer() {
 
-    while(programActivity == PROGRAM_RUNS) {
-        
-        long long nonIdle, prevNonIdle, prevIdle, Idle, prevTotal,
-                  total, totalLd, idled;
+    long long nonIdle, prevNonIdle, prevIdle, Idle, prevTotal,
+                total, totalLd, idled;
+    uint8_t prevIdx;
+    kernel_statistics_t inputKs;
 
-        uint8_t prevIdx = 0;
+    while (programActivity == PROGRAM_RUNS) {
 
-        kernel_statistics_t inputKs = cbuff_remove(cBuff);
+        prevIdx = 254;
+
+        inputKs = cbuff_remove(cBuff);
 
         /* choose cpy by name */
         prevIdx = whichCpu(inputKs.cpuNum);
@@ -96,8 +97,8 @@ void* analyzer() {
 
 uint8_t whichCpu(char* n) {
 
-    for(int i = 0; i < numCoresPlusOne; i++) {
-        if(strcmp(n, prevKS[i].cpuNum) == 0) {
+    for (int i = 0; i < numCoresPlusOne; i++) {
+        if (strcmp(n, prevKS[i].cpuNum) == 0) {
             return i;
         } 
     }

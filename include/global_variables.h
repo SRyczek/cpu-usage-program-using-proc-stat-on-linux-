@@ -1,5 +1,6 @@
 
-
+#ifndef GLOBAL_VARIABLES_H
+#define GLOBAL_VARIABLES_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,6 +28,8 @@ extern volatile _Atomic int programActivity;
 /* The number of cores plus one is required because 
 you have to take into account the sum of all the */
 extern long numCoresPlusOne;
+
+#endif
 
 
 

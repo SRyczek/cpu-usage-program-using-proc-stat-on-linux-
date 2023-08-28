@@ -1,5 +1,5 @@
 
-#include "../include/global.h"
+#include "../include/global_variables.h"
 #include "../include/buffer.h"
 #include "../include/watchDog.h"
 
@@ -19,7 +19,7 @@ void* reader() {
 
     kernel_statistics_t kS;
     
-    while(programActivity == PROGRAM_RUNS) {
+    while (programActivity == PROGRAM_RUNS) {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
             logger_cbuff_add(loggerCBuff, 1);
@@ -43,7 +43,6 @@ void* reader() {
         usleep(1000000);
 
         atomic_store(&readerFlag, THREAD_WORKS);
-
     }
 
     return 0;

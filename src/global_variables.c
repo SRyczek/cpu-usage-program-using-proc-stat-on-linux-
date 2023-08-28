@@ -1,5 +1,5 @@
 
-#include "../include/global.h"
+#include "../include/global_variables.h"
 #include "../include/buffer.h"
 
 volatile _Atomic int programActivity;

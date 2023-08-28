@@ -1,11 +1,11 @@
 
 #include "../include/buffer.h"
-#include "../include/global.h"
+#include "../include/global_variables.h"
 /*
 In this file buffer implementation is included.
 
 cbuff_new() creates structure cbuff_t which 
-includes counters, buffer size and space for elements(kernel_statistics_t).
+includes counters, buffer size and space for elements.
 
 cbuff_add() adds the item to the buffer.If buffor is full
 function call pthread_cond_wait() until some element is removed.
@@ -25,6 +25,8 @@ pthread_cond_t logBufforEmpty;
 
 cbuff_t* cBuff;
 
+/* kernel statistic buffor ***********************************************************/
+
 cbuff_t* cbuff_new(int size) {
   cbuff_t * cb = (cbuff_t*)malloc(sizeof(cbuff_t));
   memset(cb, 0, sizeof(cbuff_t));
@@ -33,6 +35,40 @@ cbuff_t* cbuff_new(int size) {
   
   return cb;
 }
+
+void cbuff_add(cbuff_t* cb, kernel_statistics_t elem) {
+  pthread_mutex_lock(&mutex);
+  int end = cb->end;
+  while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&bufforFull, &mutex);
+
+  cb->buff[cb->end] = elem;
+  cb->end = (cb->end+1) % cb->size;
+  cb->count++;
+
+  pthread_cond_signal(&bufforEmpty); 
+  pthread_mutex_unlock(&mutex);
+}
+
+kernel_statistics_t cbuff_remove(cbuff_t * cb) {
+  pthread_mutex_lock(&mutex);
+  int start = cb->start;
+  kernel_statistics_t ret;
+  while(cb->count <= 0) pthread_cond_wait(&bufforEmpty, &mutex);
+
+  if(cb->count || (start % cb->size) != cb->end) {
+
+    ret = cb->buff[cb->start];
+    cb->start = (cb->start + 1 ) % cb->size;
+    cb->count--;
+  } 
+
+  pthread_cond_signal(&bufforFull); 
+  pthread_mutex_unlock(&mutex);
+
+  return ret;
+}
+
+/* logger buffor ************************************************************************/
 
 log_cbuff_t* logger_cbuff_new(int size) {
   log_cbuff_t * cb = (log_cbuff_t*)malloc(sizeof(log_cbuff_t));
@@ -43,62 +79,21 @@ log_cbuff_t* logger_cbuff_new(int size) {
   return cb;
 }
 
-void cbuff_add(cbuff_t* cb, kernel_statistics_t elem) {
-  pthread_mutex_lock(&mutex);
-  int end = cb->end;
-  while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&bufforFull, &mutex);
-
-  //printf("Added Elem[%d] = %d\n",cb->end, elem);
-  //printf("Added element\n");
-  cb->buff[cb->end] = elem;
-  cb->end = (cb->end+1) % cb->size;
-  cb->count++;
-
-  //printf("From Add Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
-  pthread_cond_signal(&bufforEmpty); 
-  pthread_mutex_unlock(&mutex);
-}
 void logger_cbuff_add(log_cbuff_t* cb, int elem) {
   pthread_mutex_lock(&mutex);
   int end = cb->end;
   while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&logBufforFull, &mutex);
 
-  //printf("Added Elem[%d] = %d\n",cb->end, elem);
-  //printf("Added element\n");
   cb->buff[cb->end] = elem;
   cb->end = (cb->end+1) % cb->size;
   cb->count++;
 
-  //printf("From Add Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
   pthread_cond_signal(&logBufforEmpty); 
   
   pthread_mutex_unlock(&mutex);
   pthread_cond_signal(&loggerStart); 
 
 }
-
-kernel_statistics_t cbuff_remove(cbuff_t * cb) {
-  pthread_mutex_lock(&mutex);
-  int start = cb->start;
-  kernel_statistics_t ret;
-  while(cb->count <= 0) pthread_cond_wait(&bufforEmpty, &mutex);
-
-  if(cb->count || (start % cb->size) != cb->end) {
-    //printf("Removed Elem[%d] = %d\n",cb->start, cb->buff[cb->start]);
-    //printf("Removed element\n");
-    //printf("From Remove Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
-    ret = cb->buff[cb->start];
-    cb->start = (cb->start + 1 ) % cb->size;
-    cb->count--;
-  } else {
-    printf("Something goes wrong with remove\n");
-  }
-  pthread_cond_signal(&bufforFull); 
-  pthread_mutex_unlock(&mutex);
-
-  return ret;
-}
-
 
 int logger_cbuff_remove(log_cbuff_t * cb) {
   pthread_mutex_lock(&mutex);
@@ -107,9 +102,6 @@ int logger_cbuff_remove(log_cbuff_t * cb) {
   while(cb->count <= 0) pthread_cond_wait(&logBufforEmpty, &mutex);
 
   if(cb->count || (start % cb->size) != cb->end) {
-    //printf("Removed Elem[%d] = %d\n",cb->start, cb->buff[cb->start]);
-    //printf("Removed element\n");
-    //printf("From Remove Counter: %d, End %d, Start %d\n", cb->count, cb->end, cb->start);
     ret = cb->buff[cb->start];
     cb->start = (cb->start + 1 ) % cb->size;
     cb->count--;
@@ -121,6 +113,8 @@ int logger_cbuff_remove(log_cbuff_t * cb) {
   return ret;
 }
 
+
+/* delete buffers **************************************************************************/
 
 void cbuff_delete(cbuff_t * cb)
 {

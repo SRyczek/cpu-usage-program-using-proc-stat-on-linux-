@@ -1,7 +1,7 @@
 src/CMakeFiles/include.dir/analyzer.c.o: \
  /home/seb/Desktop/project_tietoevry/src/analyzer.c \
  /usr/include/stdc-predef.h \
- /home/seb/Desktop/project_tietoevry/src/../include/global.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/global_variables.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \

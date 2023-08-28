@@ -3,7 +3,7 @@
 
 src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -112,7 +112,7 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h \
@@ -181,9 +181,9 @@ src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c \
   /usr/include/x86_64-linux-gnu/sys/time.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
 
-src/CMakeFiles/include.dir/global.c.o: ../src/global.c \
+src/CMakeFiles/include.dir/global_variables.c.o: ../src/global_variables.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -272,7 +272,7 @@ src/CMakeFiles/include.dir/global.c.o: ../src/global.c \
 
 src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -359,11 +359,11 @@ src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
   ../include/buffer.h \
   ../include/logger.h \
-  ../include/buffer.h
+  ../include/watchDog.h
 
 src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -454,7 +454,7 @@ src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c \
 
 src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -544,7 +544,7 @@ src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c \
 
 src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
   /usr/include/stdc-predef.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdio.h \
   /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
   /usr/include/features.h \
@@ -640,8 +640,6 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 ../include/logger.h:
 
-../src/global.c:
-
 ../src/logger.c:
 
 ../src/buffer.c:
@@ -708,12 +706,6 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 /usr/include/features.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
-
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
@@ -734,6 +726,14 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 /usr/include/alloca.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+../include/global_variables.h:
+
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/strings.h:
@@ -745,8 +745,6 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
 /usr/include/stdio.h:
-
-../include/global.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -794,17 +792,17 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/x86_64-linux-gnu/sys/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
 
@@ -825,5 +823,7 @@ src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c \
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
+
+../src/global_variables.c:
 
 /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:

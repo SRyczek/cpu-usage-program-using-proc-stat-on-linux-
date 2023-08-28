@@ -77,7 +77,7 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   /usr/include/x86_64-linux-gnu/bits/stat.h \
   /usr/include/x86_64-linux-gnu/bits/struct_stat.h \
   /usr/include/x86_64-linux-gnu/sys/stat.h \
-  ../include/global.h \
+  ../include/global_variables.h \
   /usr/include/stdlib.h \
   /usr/include/x86_64-linux-gnu/bits/waitflags.h \
   /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
@@ -120,8 +120,7 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
   ../include/printer.h \
   ../include/reader.h \
   ../include/watchDog.h \
-  ../include/logger.h \
-  ../include/buffer.h
+  ../include/logger.h
 
 
 ../include/logger.h:
@@ -180,7 +179,7 @@ src/CMakeFiles/main.dir/main.c.o: ../src/main.c \
 
 /usr/include/stdlib.h:
 
-../include/global.h:
+../include/global_variables.h:
 
 /usr/include/x86_64-linux-gnu/sys/stat.h:
 

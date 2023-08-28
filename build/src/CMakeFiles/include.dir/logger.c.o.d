@@ -1,7 +1,7 @@
 src/CMakeFiles/include.dir/logger.c.o: \
  /home/seb/Desktop/project_tietoevry/src/logger.c \
  /usr/include/stdc-predef.h \
- /home/seb/Desktop/project_tietoevry/src/../include/global.h \
+ /home/seb/Desktop/project_tietoevry/src/../include/global_variables.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -76,4 +76,4 @@ src/CMakeFiles/include.dir/logger.c.o: \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h \
  /home/seb/Desktop/project_tietoevry/src/../include/buffer.h \
  /home/seb/Desktop/project_tietoevry/src/../include/logger.h \
- /home/seb/Desktop/project_tietoevry/src/../include/buffer.h
+ /home/seb/Desktop/project_tietoevry/src/../include/watchDog.h

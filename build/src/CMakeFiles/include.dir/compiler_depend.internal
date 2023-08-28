@@ -4,7 +4,7 @@
 src/CMakeFiles/include.dir/analyzer.c.o
  /home/seb/Desktop/project_tietoevry/src/analyzer.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -114,7 +114,7 @@ src/CMakeFiles/include.dir/buffer.c.o
  /usr/include/x86_64-linux-gnu/bits/wchar.h
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h
@@ -183,10 +183,10 @@ src/CMakeFiles/include.dir/buffer.c.o
  /usr/include/x86_64-linux-gnu/sys/time.h
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
 
-src/CMakeFiles/include.dir/global.c.o
- /home/seb/Desktop/project_tietoevry/src/global.c
+src/CMakeFiles/include.dir/global_variables.c.o
+ /home/seb/Desktop/project_tietoevry/src/global_variables.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -276,7 +276,7 @@ src/CMakeFiles/include.dir/global.c.o
 src/CMakeFiles/include.dir/logger.c.o
  /home/seb/Desktop/project_tietoevry/src/logger.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -363,12 +363,12 @@ src/CMakeFiles/include.dir/logger.c.o
  /usr/lib/gcc/x86_64-linux-gnu/11/include/stdatomic.h
  /home/seb/Desktop/project_tietoevry/include/buffer.h
  /home/seb/Desktop/project_tietoevry/include/logger.h
- /home/seb/Desktop/project_tietoevry/include/buffer.h
+ /home/seb/Desktop/project_tietoevry/include/watchDog.h
 
 src/CMakeFiles/include.dir/printer.c.o
  /home/seb/Desktop/project_tietoevry/src/printer.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -460,7 +460,7 @@ src/CMakeFiles/include.dir/printer.c.o
 src/CMakeFiles/include.dir/reader.c.o
  /home/seb/Desktop/project_tietoevry/src/reader.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h
@@ -551,7 +551,7 @@ src/CMakeFiles/include.dir/reader.c.o
 src/CMakeFiles/include.dir/watchDog.c.o
  /home/seb/Desktop/project_tietoevry/src/watchDog.c
  /usr/include/stdc-predef.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdio.h
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h
  /usr/include/features.h

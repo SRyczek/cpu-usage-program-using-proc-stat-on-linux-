@@ -69,19 +69,19 @@ include src/CMakeFiles/include.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/CMakeFiles/include.dir/flags.make
 
-src/CMakeFiles/include.dir/global.c.o: src/CMakeFiles/include.dir/flags.make
-src/CMakeFiles/include.dir/global.c.o: ../src/global.c
-src/CMakeFiles/include.dir/global.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/include.dir/global.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/global.c.o -MF CMakeFiles/include.dir/global.c.o.d -o CMakeFiles/include.dir/global.c.o -c /home/seb/Desktop/project_tietoevry/src/global.c
+src/CMakeFiles/include.dir/global_variables.c.o: src/CMakeFiles/include.dir/flags.make
+src/CMakeFiles/include.dir/global_variables.c.o: ../src/global_variables.c
+src/CMakeFiles/include.dir/global_variables.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/include.dir/global_variables.c.o"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/global_variables.c.o -MF CMakeFiles/include.dir/global_variables.c.o.d -o CMakeFiles/include.dir/global_variables.c.o -c /home/seb/Desktop/project_tietoevry/src/global_variables.c
 
-src/CMakeFiles/include.dir/global.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/global.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/global.c > CMakeFiles/include.dir/global.c.i
+src/CMakeFiles/include.dir/global_variables.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/global_variables.c.i"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/global_variables.c > CMakeFiles/include.dir/global_variables.c.i
 
-src/CMakeFiles/include.dir/global.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/global.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/global.c -o CMakeFiles/include.dir/global.c.s
+src/CMakeFiles/include.dir/global_variables.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/global_variables.c.s"
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/global_variables.c -o CMakeFiles/include.dir/global_variables.c.s
 
 src/CMakeFiles/include.dir/analyzer.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c
@@ -169,7 +169,7 @@ src/CMakeFiles/include.dir/buffer.c.s: cmake_force
 
 # Object files for target include
 include_OBJECTS = \
-"CMakeFiles/include.dir/global.c.o" \
+"CMakeFiles/include.dir/global_variables.c.o" \
 "CMakeFiles/include.dir/analyzer.c.o" \
 "CMakeFiles/include.dir/printer.c.o" \
 "CMakeFiles/include.dir/watchDog.c.o" \
@@ -180,7 +180,7 @@ include_OBJECTS = \
 # External object files for target include
 include_EXTERNAL_OBJECTS =
 
-src/libinclude.a: src/CMakeFiles/include.dir/global.c.o
+src/libinclude.a: src/CMakeFiles/include.dir/global_variables.c.o
 src/libinclude.a: src/CMakeFiles/include.dir/analyzer.c.o
 src/libinclude.a: src/CMakeFiles/include.dir/printer.c.o
 src/libinclude.a: src/CMakeFiles/include.dir/watchDog.c.o

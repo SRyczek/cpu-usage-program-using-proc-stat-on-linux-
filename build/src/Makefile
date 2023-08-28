@@ -202,29 +202,29 @@ buffer.c.s:
 	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/buffer.c.s
 .PHONY : buffer.c.s
 
-global.o: global.c.o
-.PHONY : global.o
+global_variables.o: global_variables.c.o
+.PHONY : global_variables.o
 
 # target to build an object file
-global.c.o:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.o
-.PHONY : global.c.o
+global_variables.c.o:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global_variables.c.o
+.PHONY : global_variables.c.o
 
-global.i: global.c.i
-.PHONY : global.i
+global_variables.i: global_variables.c.i
+.PHONY : global_variables.i
 
 # target to preprocess a source file
-global.c.i:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.i
-.PHONY : global.c.i
+global_variables.c.i:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global_variables.c.i
+.PHONY : global_variables.c.i
 
-global.s: global.c.s
-.PHONY : global.s
+global_variables.s: global_variables.c.s
+.PHONY : global_variables.s
 
 # target to generate assembly for a file
-global.c.s:
-	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global.c.s
-.PHONY : global.c.s
+global_variables.c.s:
+	cd /home/seb/Desktop/project_tietoevry/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/include.dir/build.make src/CMakeFiles/include.dir/global_variables.c.s
+.PHONY : global_variables.c.s
 
 logger.o: logger.c.o
 .PHONY : logger.o
@@ -363,9 +363,9 @@ help:
 	@echo "... buffer.o"
 	@echo "... buffer.i"
 	@echo "... buffer.s"
-	@echo "... global.o"
-	@echo "... global.i"
-	@echo "... global.s"
+	@echo "... global_variables.o"
+	@echo "... global_variables.i"
+	@echo "... global_variables.s"
 	@echo "... logger.o"
 	@echo "... logger.i"
 	@echo "... logger.s"

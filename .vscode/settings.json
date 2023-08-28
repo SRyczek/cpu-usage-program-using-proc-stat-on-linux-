@@ -7,6 +7,10 @@
         "atomic": "cpp",
         "global.h": "c",
         "watchdog.h": "c",
-        "printer.h": "c"
+        "printer.h": "c",
+        "globalvar.h": "c",
+        "buffer.h": "c",
+        "logger.h": "c",
+        "global_variables.h": "c"
     }
 }

@@ -78,7 +78,7 @@ src/CMakeFiles/main.dir/main.c.o
  /usr/include/x86_64-linux-gnu/bits/stat.h
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h
  /usr/include/x86_64-linux-gnu/sys/stat.h
- /home/seb/Desktop/project_tietoevry/include/global.h
+ /home/seb/Desktop/project_tietoevry/include/global_variables.h
  /usr/include/stdlib.h
  /usr/include/x86_64-linux-gnu/bits/waitflags.h
  /usr/include/x86_64-linux-gnu/bits/waitstatus.h
@@ -122,5 +122,4 @@ src/CMakeFiles/main.dir/main.c.o
  /home/seb/Desktop/project_tietoevry/include/reader.h
  /home/seb/Desktop/project_tietoevry/include/watchDog.h
  /home/seb/Desktop/project_tietoevry/include/logger.h
- /home/seb/Desktop/project_tietoevry/include/buffer.h
 

@@ -1,8 +1,8 @@
 [
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",
-  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/global.c.o -c /home/seb/Desktop/project_tietoevry/src/global.c",
-  "file": "/home/seb/Desktop/project_tietoevry/src/global.c"
+  "command": "/usr/bin/gcc  -I/..  -Wall -Wextra -g -pthread -g -o CMakeFiles/include.dir/global_variables.c.o -c /home/seb/Desktop/project_tietoevry/src/global_variables.c",
+  "file": "/home/seb/Desktop/project_tietoevry/src/global_variables.c"
 },
 {
   "directory": "/home/seb/Desktop/project_tietoevry/build/src",

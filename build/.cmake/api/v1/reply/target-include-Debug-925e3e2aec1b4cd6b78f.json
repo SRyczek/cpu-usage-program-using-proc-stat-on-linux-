@@ -95,7 +95,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/global.c",
+			"path" : "src/global_variables.c",
 			"sourceGroupIndex" : 0
 		},
 		{
