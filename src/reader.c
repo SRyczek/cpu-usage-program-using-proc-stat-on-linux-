@@ -45,7 +45,6 @@ void* reader(void* __attribute__((unused)) arg) {
 
         atomic_store(&readerFlag, THREAD_WORKS);
     }
-
+    
     return NULL;
-
 }

@@ -82,7 +82,6 @@ void* analyzer(void* __attribute__((unused)) arg) {
 
 uint8_t whichCpu(char* n) {
 
-    
     for (uint8_t i = 0; i < (uint8_t)numCoresPlusOne; i++) {
         if (strcmp(n, prevKS[i].cpuNum) == 0) {
             return i;
@@ -93,15 +92,12 @@ uint8_t whichCpu(char* n) {
 
 }
 
-
 void initAnalyzer() {
 
     /* allocate memory for previous kernel statistics array */
     //prevKS = (kernel_statistics_t*)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
     prevKS = (kernel_statistics_t*)calloc(numCoresPlusOne, sizeof(kernel_statistics_t));
     cpuPercentage = (double*)calloc(numCoresPlusOne, sizeof(double));
-
-
 
     /* set prevKS name to use in analyzer */
     /* WARNING!
@@ -116,6 +112,5 @@ void initAnalyzer() {
     for (uint8_t i = 1; i < (uint8_t)numCoresPlusOne; i++) {
         sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
     }
-
 
 }

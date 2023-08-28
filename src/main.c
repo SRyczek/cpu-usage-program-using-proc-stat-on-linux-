@@ -44,13 +44,22 @@ int main() {
 
     logger_cbuff_add(loggerCBuff, 0);
 
-    pthread_create(&readerThread, NULL, &reader, NULL);
-    pthread_create(&analyzerThread, NULL, &analyzer, NULL);
-    pthread_create(&watchDogThread, NULL, &watchDog, NULL);
+    if (pthread_create(&readerThread, NULL, &reader, NULL) != 0) {
+        perror("Failed to created reader thread");
+    }
+    if (pthread_create(&analyzerThread, NULL, &analyzer, NULL) != 0) {
+        perror("Failed to created analyzer thread");
+    }  
+    if (pthread_create(&watchDogThread, NULL, &watchDog, NULL) != 0) {
+        perror("Failed to created watchDog thread");
+    }
     usleep(500000);
-    pthread_create(&printerThread, NULL, &printer, NULL);
-    pthread_create(&loggerThread, NULL, &logger, NULL);
-
+    if (pthread_create(&printerThread, NULL, &printer, NULL) != 0) {
+        perror("Failed to created printer thread");
+    }
+    if (pthread_create(&loggerThread, NULL, &logger, NULL) != 0) {
+         perror("Failed to created logger thread");
+    }
 
     pthread_join(readerThread, NULL);
     pthread_join(analyzerThread, NULL);
@@ -60,8 +69,6 @@ int main() {
 
     return 0;
 }
-
-
 
 void initSigterm() {
     struct sigaction action;
