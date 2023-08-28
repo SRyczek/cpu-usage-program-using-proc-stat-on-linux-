@@ -28,11 +28,10 @@ cbuff_t* cBuff;
 /* kernel statistic buffor ***********************************************************/
 
 cbuff_t* cbuff_new(int size) {
-  cbuff_t * cb = (cbuff_t*)malloc(sizeof(cbuff_t));
+  cbuff_t *cb = (cbuff_t*)calloc(1, sizeof(cbuff_t));
   memset(cb, 0, sizeof(cbuff_t));
   cb->size = size;
-  cb->buff = (kernel_statistics_t*)malloc(sizeof(kernel_statistics_t) * (unsigned long)size);
-  
+  cb->buff = (kernel_statistics_t*)calloc((size_t)size, sizeof(kernel_statistics_t));
   return cb;
 }
 
@@ -74,10 +73,10 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
 /* logger buffor ************************************************************************/
 
 log_cbuff_t* logger_cbuff_new(int size) {
-  log_cbuff_t* cb = (log_cbuff_t*)malloc(sizeof(log_cbuff_t));
+  log_cbuff_t *cb = (log_cbuff_t*)calloc(1, sizeof(log_cbuff_t));
   memset(cb, 0, sizeof(log_cbuff_t));
   cb->size = size;
-  cb->buff = (int*)malloc(sizeof(int) * (unsigned long)size);
+  cb->buff = (int*)calloc((size_t)size, sizeof(int));
   
   return cb;
 }

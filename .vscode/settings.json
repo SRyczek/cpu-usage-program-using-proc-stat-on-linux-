@@ -11,6 +11,11 @@
         "globalvar.h": "c",
         "buffer.h": "c",
         "logger.h": "c",
-        "global_variables.h": "c"
+        "global_variables.h": "c",
+        "array": "c",
+        "buffer": "c",
+        "string_view": "c",
+        "initializer_list": "c",
+        "utility": "c"
     }
 }

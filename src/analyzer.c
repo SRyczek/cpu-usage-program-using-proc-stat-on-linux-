@@ -97,8 +97,9 @@ uint8_t whichCpu(char* n) {
 void initAnalyzer() {
 
     /* allocate memory for previous kernel statistics array */
-    prevKS = (kernel_statistics_t*)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
-    cpuPercentage = (double*)malloc(numCoresPlusOne * sizeof(double));
+    //prevKS = (kernel_statistics_t*)malloc(numCoresPlusOne * sizeof(kernel_statistics_t));
+    prevKS = (kernel_statistics_t*)calloc(numCoresPlusOne, sizeof(kernel_statistics_t));
+    cpuPercentage = (double*)calloc(numCoresPlusOne, sizeof(double));
 
 
 
@@ -110,11 +111,11 @@ void initAnalyzer() {
         cpu index 3 is equal "cpu2"
         ...
     */
+
     strcpy(prevKS[0].cpuNum, "cpu");
     for (uint8_t i = 1; i < (uint8_t)numCoresPlusOne; i++) {
         sprintf(prevKS[i].cpuNum, "cpu%d", i - 1);
     }
 
-    memset(cpuPercentage, 0, sizeof(numCoresPlusOne * sizeof(double)));
 
 }
