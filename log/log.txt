@@ -169,3 +169,63 @@
 [2023-08-28 01:49:45] Reader correctly open file
 [2023-08-28 01:49:46] Reader correctly open file
 [2023-08-28 01:49:47] Reader correctly open file
+[2023-08-28 11:05:21] Program starts
+[2023-08-28 11:05:21] Reader correctly open file
+[2023-08-28 11:05:22] Reader correctly open file
+[2023-08-28 11:05:23] Reader correctly open file
+[2023-08-28 11:05:24] Reader correctly open file
+[2023-08-28 11:05:25] Reader correctly open file
+[2023-08-28 11:05:26] Reader correctly open file
+[2023-08-28 11:05:27] Reader correctly open file
+[2023-08-28 11:05:28] Reader correctly open file
+[2023-08-28 12:08:32] Program starts
+[2023-08-28 12:08:32] Reader correctly open file
+[2023-08-28 12:08:33] Reader correctly open file
+[2023-08-28 12:08:34] Reader correctly open file
+[2023-08-28 12:08:35] Reader correctly open file
+[2023-08-28 12:20:03] Program starts
+[2023-08-28 12:20:03] Reader correctly open file
+[2023-08-28 12:20:04] Reader correctly open file
+[2023-08-28 12:20:05] Reader correctly open file
+[2023-08-28 12:20:06] Reader correctly open file
+[2023-08-28 12:20:07] Reader correctly open file
+[2023-08-28 12:20:08] Reader correctly open file
+[2023-08-28 12:20:09] Reader correctly open file
+[2023-08-28 14:05:23] Program starts
+[2023-08-28 14:05:23] Reader correctly open file
+[2023-08-28 14:05:23] Reader correctly open file
+[2023-08-28 14:05:24] Reader correctly open file
+[2023-08-28 14:05:25] Reader correctly open file
+[2023-08-28 14:05:26] Reader correctly open file
+[2023-08-28 14:05:27] Reader correctly open file
+[2023-08-28 14:22:04] Program starts
+[2023-08-28 14:22:04] Reader correctly open file
+[2023-08-28 14:22:05] Reader correctly open file
+[2023-08-28 14:22:06] Reader correctly open file
+[2023-08-28 14:22:07] Reader correctly open file
+[2023-08-28 14:22:08] Reader correctly open file
+[2023-08-28 14:22:09] Reader correctly open file
+[2023-08-28 14:22:10] Reader correctly open file
+[2023-08-28 14:22:11] Reader correctly open file
+[2023-08-28 14:22:12] Reader correctly open file
+[2023-08-28 14:22:13] Reader correctly open file
+[2023-08-28 14:22:14] Reader correctly open file
+[2023-08-28 14:22:15] Reader correctly open file
+[2023-08-28 14:22:16] Reader correctly open file
+[2023-08-28 18:06:59] Program starts
+[2023-08-28 18:06:59] Reader correctly open file
+[2023-08-28 18:07:00] Reader correctly open file
+[2023-08-28 18:07:01] Reader correctly open file
+[2023-08-28 18:07:02] Reader correctly open file
+[2023-08-28 18:07:03] Reader correctly open file
+[2023-08-28 18:07:04] Reader correctly open file
+[2023-08-28 18:07:05] Reader correctly open file
+[2023-08-28 18:07:06] Reader correctly open file
+[2023-08-28 18:07:07] Reader correctly open file
+[2023-08-28 18:15:16] Program starts
+[2023-08-28 18:15:16] Reader correctly open file
+[2023-08-28 18:15:16] Reader correctly open file
+[2023-08-28 18:15:17] Reader correctly open file
+[2023-08-28 18:15:18] Reader correctly open file
+[2023-08-28 18:15:19] Reader correctly open file
+[2023-08-28 18:15:20] Reader correctly open file

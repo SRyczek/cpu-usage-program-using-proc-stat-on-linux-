@@ -27,7 +27,7 @@ extern volatile _Atomic int programActivity;
 
 /* The number of cores plus one is required because 
 you have to take into account the sum of all the */
-extern long numCoresPlusOne;
+extern size_t numCoresPlusOne;
 
 #endif
 

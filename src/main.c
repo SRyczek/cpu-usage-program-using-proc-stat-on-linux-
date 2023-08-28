@@ -14,18 +14,21 @@
 #include "../include/watchDog.h"
 #include "../include/logger.h"
 
+__attribute__((noreturn)) void term(void);
+void initSigterm(void);
+
 int main() {
 
     pthread_t readerThread, analyzerThread, printerThread, watchDogThread, loggerThread;
-
+    size_t numCores, bufferLen;
     /* set threads to RUN */
     programActivity = PROGRAM_RUNS;
 
     /* calculate num of cores in hardware */
-    long numCores = sysconf(_SC_NPROCESSORS_ONLN);
+    numCores = (size_t)sysconf(_SC_NPROCESSORS_ONLN);
     printf("Num of cores: %ld\n", numCores);
     numCoresPlusOne = numCores + 1;
-    uint8_t bufferLen = numCoresPlusOne * BUFFER_MULTIPLIER;
+    bufferLen = numCoresPlusOne * BUFFER_MULTIPLIER;
 
     initAnalyzer();
     initSigterm();
@@ -33,7 +36,7 @@ int main() {
     pthread_mutex_init(&mutex, NULL);
     pthread_cond_init(&loggerStart, NULL);
 
-    cBuff = cbuff_new(bufferLen);
+    cBuff = cbuff_new((int)bufferLen);
     loggerCBuff = logger_cbuff_new(LOGGER_LENGTH);
 
     printf("Program starts\n\n");
@@ -58,22 +61,24 @@ int main() {
     return 0;
 }
 
-void term() {
-    /* free all memory, destroy mutex and stops all threads */
-    programActivity = PROGRAM_STOP;
-    pthread_mutex_destroy(&mutex);
-    free(prevKS);
-    free(cpuPercentage);
-    cbuff_delete(cBuff);
-    cbuff_delete(loggerCBuff);
-    printf("Program stops\n");
 
-    exit(0);
-}
 
 void initSigterm() {
     struct sigaction action;
     memset(&action, 0, sizeof(struct sigaction));
     action.sa_handler = term;
     sigaction(SIGTERM, &action, NULL);
+}
+
+void term() {
+    /* free all memory, destroy mutex and stops all threads */
+    programActivity = PROGRAM_STOP;
+    usleep(2000000);
+    pthread_mutex_destroy(&mutex);
+    free(prevKS);
+    free(cpuPercentage);
+    cbuff_delete(cBuff, NULL);
+    cbuff_delete(NULL, loggerCBuff);
+    printf("Program stops\n");
+    exit(0);
 }

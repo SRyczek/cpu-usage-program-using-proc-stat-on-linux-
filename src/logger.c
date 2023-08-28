@@ -13,7 +13,7 @@ to a specific message, which is described in the logMessageToFile[].
 */
 
 
-const char* logMessageToFile[] = {
+static const char* logMessageToFile[] = {
     "Program starts",                                                       /* Idx 0 */
     "Reader correctly open file",                                           /* Idx 1 */
     "Error opening file in reader",                                         /* Idx 2 */
@@ -21,15 +21,17 @@ const char* logMessageToFile[] = {
     "Watchdog has detected that the reader is not working properly",        /* Idx 4 */
     "Watchdog has detected that the printer is not working properly",       /* Idx 5 */
     "In the analyzer was performed division by zero",                       /* Idx 6 */
-    "WhichCpu function reports an error"                                    /* Idx 7 */
+    "WhichCpu function reports an error",                                   /* Idx 7 */
     "Watchdog has detected that the logger is not working properly"         /* Idx 8 */
 };
 
-void* logger() {
+void* logger(void* __attribute__((unused)) arg) {
 
     time_t currentTime;
     struct tm *timeInfo;
     char timeString[30];
+    int loggerMessage;
+    FILE *file1;
 
     while (programActivity == PROGRAM_RUNS) {
 
@@ -39,14 +41,13 @@ void* logger() {
         }
         pthread_mutex_unlock(&mutex);
 
+        loggerMessage = logger_cbuff_remove(loggerCBuff);
 
-        int loggerMessage = logger_cbuff_remove(loggerCBuff);
-
-        FILE *file1 = fopen("../log/log.txt", "a"); 
+         file1 = fopen("../log/log.txt", "a"); 
 
         if (file1 == NULL) {
             perror("Cannot open file\n");
-            return 1;
+            return NULL;
         }
         /* calculate current time */
         time(&currentTime);
@@ -62,5 +63,5 @@ void* logger() {
 
     }
 
-    return 0;
+    return NULL;
 }

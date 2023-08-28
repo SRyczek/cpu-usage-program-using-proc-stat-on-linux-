@@ -73,99 +73,99 @@ src/CMakeFiles/include.dir/global_variables.c.o: src/CMakeFiles/include.dir/flag
 src/CMakeFiles/include.dir/global_variables.c.o: ../src/global_variables.c
 src/CMakeFiles/include.dir/global_variables.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/CMakeFiles/include.dir/global_variables.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/global_variables.c.o -MF CMakeFiles/include.dir/global_variables.c.o.d -o CMakeFiles/include.dir/global_variables.c.o -c /home/seb/Desktop/project_tietoevry/src/global_variables.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/global_variables.c.o -MF CMakeFiles/include.dir/global_variables.c.o.d -o CMakeFiles/include.dir/global_variables.c.o -c /home/seb/Desktop/project_tietoevry/src/global_variables.c
 
 src/CMakeFiles/include.dir/global_variables.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/global_variables.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/global_variables.c > CMakeFiles/include.dir/global_variables.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/global_variables.c > CMakeFiles/include.dir/global_variables.c.i
 
 src/CMakeFiles/include.dir/global_variables.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/global_variables.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/global_variables.c -o CMakeFiles/include.dir/global_variables.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/global_variables.c -o CMakeFiles/include.dir/global_variables.c.s
 
 src/CMakeFiles/include.dir/analyzer.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/analyzer.c.o: ../src/analyzer.c
 src/CMakeFiles/include.dir/analyzer.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/CMakeFiles/include.dir/analyzer.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/analyzer.c.o -MF CMakeFiles/include.dir/analyzer.c.o.d -o CMakeFiles/include.dir/analyzer.c.o -c /home/seb/Desktop/project_tietoevry/src/analyzer.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/analyzer.c.o -MF CMakeFiles/include.dir/analyzer.c.o.d -o CMakeFiles/include.dir/analyzer.c.o -c /home/seb/Desktop/project_tietoevry/src/analyzer.c
 
 src/CMakeFiles/include.dir/analyzer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/analyzer.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/analyzer.c > CMakeFiles/include.dir/analyzer.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/analyzer.c > CMakeFiles/include.dir/analyzer.c.i
 
 src/CMakeFiles/include.dir/analyzer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/analyzer.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/analyzer.c -o CMakeFiles/include.dir/analyzer.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/analyzer.c -o CMakeFiles/include.dir/analyzer.c.s
 
 src/CMakeFiles/include.dir/printer.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/printer.c.o: ../src/printer.c
 src/CMakeFiles/include.dir/printer.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/CMakeFiles/include.dir/printer.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/printer.c.o -MF CMakeFiles/include.dir/printer.c.o.d -o CMakeFiles/include.dir/printer.c.o -c /home/seb/Desktop/project_tietoevry/src/printer.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/printer.c.o -MF CMakeFiles/include.dir/printer.c.o.d -o CMakeFiles/include.dir/printer.c.o -c /home/seb/Desktop/project_tietoevry/src/printer.c
 
 src/CMakeFiles/include.dir/printer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/printer.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/printer.c > CMakeFiles/include.dir/printer.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/printer.c > CMakeFiles/include.dir/printer.c.i
 
 src/CMakeFiles/include.dir/printer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/printer.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/printer.c -o CMakeFiles/include.dir/printer.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/printer.c -o CMakeFiles/include.dir/printer.c.s
 
 src/CMakeFiles/include.dir/watchDog.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/watchDog.c.o: ../src/watchDog.c
 src/CMakeFiles/include.dir/watchDog.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/CMakeFiles/include.dir/watchDog.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/watchDog.c.o -MF CMakeFiles/include.dir/watchDog.c.o.d -o CMakeFiles/include.dir/watchDog.c.o -c /home/seb/Desktop/project_tietoevry/src/watchDog.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/watchDog.c.o -MF CMakeFiles/include.dir/watchDog.c.o.d -o CMakeFiles/include.dir/watchDog.c.o -c /home/seb/Desktop/project_tietoevry/src/watchDog.c
 
 src/CMakeFiles/include.dir/watchDog.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/watchDog.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/watchDog.c > CMakeFiles/include.dir/watchDog.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/watchDog.c > CMakeFiles/include.dir/watchDog.c.i
 
 src/CMakeFiles/include.dir/watchDog.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/watchDog.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/watchDog.c -o CMakeFiles/include.dir/watchDog.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/watchDog.c -o CMakeFiles/include.dir/watchDog.c.s
 
 src/CMakeFiles/include.dir/logger.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/logger.c.o: ../src/logger.c
 src/CMakeFiles/include.dir/logger.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/CMakeFiles/include.dir/logger.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/logger.c.o -MF CMakeFiles/include.dir/logger.c.o.d -o CMakeFiles/include.dir/logger.c.o -c /home/seb/Desktop/project_tietoevry/src/logger.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/logger.c.o -MF CMakeFiles/include.dir/logger.c.o.d -o CMakeFiles/include.dir/logger.c.o -c /home/seb/Desktop/project_tietoevry/src/logger.c
 
 src/CMakeFiles/include.dir/logger.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/logger.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/logger.c > CMakeFiles/include.dir/logger.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/logger.c > CMakeFiles/include.dir/logger.c.i
 
 src/CMakeFiles/include.dir/logger.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/logger.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/logger.c -o CMakeFiles/include.dir/logger.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/logger.c -o CMakeFiles/include.dir/logger.c.s
 
 src/CMakeFiles/include.dir/reader.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/reader.c.o: ../src/reader.c
 src/CMakeFiles/include.dir/reader.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object src/CMakeFiles/include.dir/reader.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/reader.c.o -MF CMakeFiles/include.dir/reader.c.o.d -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/reader.c.o -MF CMakeFiles/include.dir/reader.c.o.d -o CMakeFiles/include.dir/reader.c.o -c /home/seb/Desktop/project_tietoevry/src/reader.c
 
 src/CMakeFiles/include.dir/reader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/reader.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/reader.c > CMakeFiles/include.dir/reader.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/reader.c > CMakeFiles/include.dir/reader.c.i
 
 src/CMakeFiles/include.dir/reader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/reader.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/reader.c -o CMakeFiles/include.dir/reader.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/reader.c -o CMakeFiles/include.dir/reader.c.s
 
 src/CMakeFiles/include.dir/buffer.c.o: src/CMakeFiles/include.dir/flags.make
 src/CMakeFiles/include.dir/buffer.c.o: ../src/buffer.c
 src/CMakeFiles/include.dir/buffer.c.o: src/CMakeFiles/include.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/CMakeFiles/include.dir/buffer.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/buffer.c.o -MF CMakeFiles/include.dir/buffer.c.o.d -o CMakeFiles/include.dir/buffer.c.o -c /home/seb/Desktop/project_tietoevry/src/buffer.c
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT src/CMakeFiles/include.dir/buffer.c.o -MF CMakeFiles/include.dir/buffer.c.o.d -o CMakeFiles/include.dir/buffer.c.o -c /home/seb/Desktop/project_tietoevry/src/buffer.c
 
 src/CMakeFiles/include.dir/buffer.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/include.dir/buffer.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/buffer.c > CMakeFiles/include.dir/buffer.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/src/buffer.c > CMakeFiles/include.dir/buffer.c.i
 
 src/CMakeFiles/include.dir/buffer.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/include.dir/buffer.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/buffer.c -o CMakeFiles/include.dir/buffer.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/src && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/src/buffer.c -o CMakeFiles/include.dir/buffer.c.s
 
 # Object files for target include
 include_OBJECTS = \

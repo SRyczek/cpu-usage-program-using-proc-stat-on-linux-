@@ -1,1 +1,1 @@
-/usr/bin/gcc  -Wall -Wextra -g -pthread -g CMakeFiles/main.dir/main.c.o -o main  libinclude.a 
+/usr/bin/clang  -Wall -Wextra -Weverything -g -pthread -g CMakeFiles/main.dir/main.c.o -o main  libinclude.a 

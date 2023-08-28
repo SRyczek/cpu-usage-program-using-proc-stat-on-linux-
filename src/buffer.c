@@ -17,11 +17,11 @@ is added.
 cbuff_delete() deletes buffer and frees memory.
 
 */
-pthread_cond_t bufforFull;
-pthread_cond_t bufforEmpty;
+static pthread_cond_t bufforFull;
+static pthread_cond_t bufforEmpty;
 
-pthread_cond_t logBufforFull;
-pthread_cond_t logBufforEmpty;
+static pthread_cond_t logBufforFull;
+static pthread_cond_t logBufforEmpty;
 
 cbuff_t* cBuff;
 
@@ -31,15 +31,16 @@ cbuff_t* cbuff_new(int size) {
   cbuff_t * cb = (cbuff_t*)malloc(sizeof(cbuff_t));
   memset(cb, 0, sizeof(cbuff_t));
   cb->size = size;
-  cb->buff = (kernel_statistics_t*)malloc(sizeof(kernel_statistics_t) * size);
+  cb->buff = (kernel_statistics_t*)malloc(sizeof(kernel_statistics_t) * (unsigned long)size);
   
   return cb;
 }
 
 void cbuff_add(cbuff_t* cb, kernel_statistics_t elem) {
+  int end;
   pthread_mutex_lock(&mutex);
-  int end = cb->end;
-  while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&bufforFull, &mutex);
+  end = cb->end;
+  while (cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&bufforFull, &mutex);
 
   cb->buff[cb->end] = elem;
   cb->end = (cb->end+1) % cb->size;
@@ -50,12 +51,14 @@ void cbuff_add(cbuff_t* cb, kernel_statistics_t elem) {
 }
 
 kernel_statistics_t cbuff_remove(cbuff_t * cb) {
-  pthread_mutex_lock(&mutex);
-  int start = cb->start;
+  int start;
   kernel_statistics_t ret;
+  memset(&ret, 0, sizeof(ret));
+  pthread_mutex_lock(&mutex);
+  start = cb->start;
   while(cb->count <= 0) pthread_cond_wait(&bufforEmpty, &mutex);
 
-  if(cb->count || (start % cb->size) != cb->end) {
+  if (cb->count || (start % cb->size) != cb->end) {
 
     ret = cb->buff[cb->start];
     cb->start = (cb->start + 1 ) % cb->size;
@@ -71,18 +74,19 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
 /* logger buffor ************************************************************************/
 
 log_cbuff_t* logger_cbuff_new(int size) {
-  log_cbuff_t * cb = (log_cbuff_t*)malloc(sizeof(log_cbuff_t));
+  log_cbuff_t* cb = (log_cbuff_t*)malloc(sizeof(log_cbuff_t));
   memset(cb, 0, sizeof(log_cbuff_t));
   cb->size = size;
-  cb->buff = (int*)malloc(sizeof(int) * size);
+  cb->buff = (int*)malloc(sizeof(int) * (unsigned long)size);
   
   return cb;
 }
 
 void logger_cbuff_add(log_cbuff_t* cb, int elem) {
+  int end ;
   pthread_mutex_lock(&mutex);
-  int end = cb->end;
-  while(cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&logBufforFull, &mutex);
+  end = cb->end;
+  while (cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&logBufforFull, &mutex);
 
   cb->buff[cb->end] = elem;
   cb->end = (cb->end+1) % cb->size;
@@ -96,12 +100,13 @@ void logger_cbuff_add(log_cbuff_t* cb, int elem) {
 }
 
 int logger_cbuff_remove(log_cbuff_t * cb) {
+  int start;
+  int ret = 0;
   pthread_mutex_lock(&mutex);
-  int start = cb->start;
-  int ret;
-  while(cb->count <= 0) pthread_cond_wait(&logBufforEmpty, &mutex);
+  start = cb->start;
+  while (cb->count <= 0) pthread_cond_wait(&logBufforEmpty, &mutex);
 
-  if(cb->count || (start % cb->size) != cb->end) {
+  if (cb->count || (start % cb->size) != cb->end) {
     ret = cb->buff[cb->start];
     cb->start = (cb->start + 1 ) % cb->size;
     cb->count--;
@@ -116,8 +121,14 @@ int logger_cbuff_remove(log_cbuff_t * cb) {
 
 /* delete buffers **************************************************************************/
 
-void cbuff_delete(cbuff_t * cb)
-{
-  free(cb->buff);
-  free(cb);
+void cbuff_delete(cbuff_t* cb, log_cbuff_t* logCb) {
+  if (cb != NULL) {
+    free(cb->buff);
+    free(cb);
+  } else if (logCb != NULL) {
+    free(logCb->buff);
+    free(logCb);   
+  }
+
 }
+

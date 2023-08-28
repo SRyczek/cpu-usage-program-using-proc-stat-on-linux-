@@ -1,2 +1,0 @@
-printer2 works correctly
-dadas

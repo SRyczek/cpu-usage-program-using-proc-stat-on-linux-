@@ -4,8 +4,8 @@
 
 extern double *cpuPercentage;
 
-void* analyzer();
-void initAnalyzer();
+void* analyzer(void* arg);
+void initAnalyzer(void);
 uint8_t whichCpu(char* n);
 
 #endif

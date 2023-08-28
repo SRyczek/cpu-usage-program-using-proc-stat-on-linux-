@@ -73,15 +73,15 @@ tests/CMakeFiles/bufferTest.dir/test1.c.o: tests/CMakeFiles/bufferTest.dir/flags
 tests/CMakeFiles/bufferTest.dir/test1.c.o: ../tests/test1.c
 tests/CMakeFiles/bufferTest.dir/test1.c.o: tests/CMakeFiles/bufferTest.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seb/Desktop/project_tietoevry/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object tests/CMakeFiles/bufferTest.dir/test1.c.o"
-	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/bufferTest.dir/test1.c.o -MF CMakeFiles/bufferTest.dir/test1.c.o.d -o CMakeFiles/bufferTest.dir/test1.c.o -c /home/seb/Desktop/project_tietoevry/tests/test1.c
+	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT tests/CMakeFiles/bufferTest.dir/test1.c.o -MF CMakeFiles/bufferTest.dir/test1.c.o.d -o CMakeFiles/bufferTest.dir/test1.c.o -c /home/seb/Desktop/project_tietoevry/tests/test1.c
 
 tests/CMakeFiles/bufferTest.dir/test1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/bufferTest.dir/test1.c.i"
-	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/tests/test1.c > CMakeFiles/bufferTest.dir/test1.c.i
+	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seb/Desktop/project_tietoevry/tests/test1.c > CMakeFiles/bufferTest.dir/test1.c.i
 
 tests/CMakeFiles/bufferTest.dir/test1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/bufferTest.dir/test1.c.s"
-	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/tests/test1.c -o CMakeFiles/bufferTest.dir/test1.c.s
+	cd /home/seb/Desktop/project_tietoevry/build/tests && /usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seb/Desktop/project_tietoevry/tests/test1.c -o CMakeFiles/bufferTest.dir/test1.c.s
 
 # Object files for target bufferTest
 bufferTest_OBJECTS = \

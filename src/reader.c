@@ -14,8 +14,9 @@ the measurement of calculations taken from /proc/stat.
 
 */
 
+void* reader(void* arg);
 
-void* reader() {
+void* reader(void* __attribute__((unused)) arg) {
 
     kernel_statistics_t kS;
     
@@ -23,8 +24,8 @@ void* reader() {
         FILE* file = fopen("/proc/stat", "r");
         if (file != NULL) {
             logger_cbuff_add(loggerCBuff, 1);
-            for (int i = 0; i < numCoresPlusOne; i++) {
-                fscanf(file, "%s %lld %lld %lld %lld %lld %lld %lld %lld %lld %lld",
+            for (size_t i = 0; i < numCoresPlusOne; i++) {
+                fscanf(file, "%s %lu %lu %lu %lu %lu %lu %lu %lu %lu %lu",
                             kS.cpuNum,
                             &kS.user,   &kS.nice, &kS.system,  &kS.idle, 
                             &kS.iowait, &kS.irq,  &kS.softirq, &kS.steal,
@@ -45,6 +46,6 @@ void* reader() {
         atomic_store(&readerFlag, THREAD_WORKS);
     }
 
-    return 0;
+    return NULL;
 
 }

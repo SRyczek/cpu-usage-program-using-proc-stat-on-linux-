@@ -3,6 +3,7 @@
 #include "../include/watchDog.h"
 #include "../include/logger.h"
 #include "../include/buffer.h"
+#include <signal.h>
 /*
 
 WatchDog thread checks that other threads are still running.
@@ -19,7 +20,7 @@ volatile _Atomic int readerFlag;
 volatile _Atomic int printerFlag;
 volatile _Atomic int loggerFlag;
 
-void* watchDog() {
+void* watchDog(void* __attribute__((unused)) arg) {
     while (programActivity == PROGRAM_RUNS) {
 
         atomic_store(&analyzerFlag, THREAD_NOT_WORKING);
@@ -32,21 +33,21 @@ void* watchDog() {
         if (atomic_load(&analyzerFlag) == THREAD_NOT_WORKING) {
             logger_cbuff_add(loggerCBuff, 3);
             sleep(3);
-            exit(0);
+            kill(getpid(), SIGTERM);
         } else if (atomic_load(&readerFlag) == THREAD_NOT_WORKING){
             logger_cbuff_add(loggerCBuff, 4);
             sleep(3);
-            exit(0);
+            kill(getpid(), SIGTERM);
         } else if (atomic_load(&printerFlag) == THREAD_NOT_WORKING) {
             logger_cbuff_add(loggerCBuff, 5);
             sleep(3);
-            exit(0); 
+            kill(getpid(), SIGTERM);
         } else if(atomic_load(&loggerFlag) == THREAD_NOT_WORKING) {
             logger_cbuff_add(loggerCBuff, 8);
             sleep(3);
-            exit(0);
+            kill(getpid(), SIGTERM);
         }
 
     }
-    return 0;
+    return NULL;
 }
