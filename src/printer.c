@@ -13,7 +13,7 @@ void* printer(void* arg);
 
 void* printer(void* __attribute__((unused)) arg) {
 
-    while(programActivity == PROGRAM_RUNS) {
+    while (programActivity == PROGRAM_RUNS) {
         usleep(1000000);
         pthread_mutex_lock(&mutex);
         printf("cpu  USAGE %.2f %%\n", cpuPercentage[0]);

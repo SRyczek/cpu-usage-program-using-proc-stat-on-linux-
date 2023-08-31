@@ -29,7 +29,6 @@ cbuff_t* cBuff;
 
 cbuff_t* cbuff_new(int size) {
   cbuff_t *cb = (cbuff_t*)calloc(1, sizeof(cbuff_t));
-  memset(cb, 0, sizeof(cbuff_t));
   cb->size = size;
   cb->buff = (kernel_statistics_t*)calloc((size_t)size, sizeof(kernel_statistics_t));
   return cb;
@@ -74,7 +73,6 @@ kernel_statistics_t cbuff_remove(cbuff_t * cb) {
 
 log_cbuff_t* logger_cbuff_new(int size) {
   log_cbuff_t *cb = (log_cbuff_t*)calloc(1, sizeof(log_cbuff_t));
-  memset(cb, 0, sizeof(log_cbuff_t));
   cb->size = size;
   cb->buff = (int*)calloc((size_t)size, sizeof(int));
   
@@ -82,7 +80,7 @@ log_cbuff_t* logger_cbuff_new(int size) {
 }
 
 void logger_cbuff_add(log_cbuff_t* cb, int elem) {
-  int end ;
+  int end;
   pthread_mutex_lock(&mutex);
   end = cb->end;
   while (cb->count && (end % cb->size) == cb->start) pthread_cond_wait(&logBufforFull, &mutex);
@@ -121,12 +119,16 @@ int logger_cbuff_remove(log_cbuff_t * cb) {
 /* delete buffers **************************************************************************/
 
 void cbuff_delete(cbuff_t* cb, log_cbuff_t* logCb) {
-  if (cb != NULL) {
+  if (cb != NULL && logCb == NULL) {
     free(cb->buff);
     free(cb);
-  } else if (logCb != NULL) {
+  } else if (cb == NULL && logCb != NULL) {
     free(logCb->buff);
     free(logCb);   
+  } else {
+    /* something goes wrong */
+    perror("Buffers free error\n");
+
   }
 
 }
