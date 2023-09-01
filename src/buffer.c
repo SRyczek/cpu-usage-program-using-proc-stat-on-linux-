@@ -31,6 +31,11 @@ cbuff_t* cbuff_new(int size) {
   cbuff_t *cb = (cbuff_t*)calloc(1, sizeof(cbuff_t));
   cb->size = size;
   cb->buff = (kernel_statistics_t*)calloc((size_t)size, sizeof(kernel_statistics_t));
+  if(cb == NULL || cb->buff == NULL) {
+    perror("Error alocating memory\n");
+    exit(1);
+  }
+
   return cb;
 }
 
@@ -75,7 +80,10 @@ log_cbuff_t* logger_cbuff_new(int size) {
   log_cbuff_t *cb = (log_cbuff_t*)calloc(1, sizeof(log_cbuff_t));
   cb->size = size;
   cb->buff = (int*)calloc((size_t)size, sizeof(int));
-  
+  if(cb == NULL || cb->buff == NULL) {
+    perror("Error alocating memory\n");
+    exit(1);
+  }
   return cb;
 }
 

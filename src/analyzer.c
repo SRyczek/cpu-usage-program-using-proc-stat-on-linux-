@@ -99,6 +99,11 @@ void initAnalyzer() {
     prevKS = (kernel_statistics_t*)calloc(numCoresPlusOne, sizeof(kernel_statistics_t));
     cpuPercentage = (double*)calloc(numCoresPlusOne, sizeof(double));
 
+    if(prevKS == NULL || cpuPercentage == NULL) {
+        perror("Error alocating memory\n");
+        exit(1);
+    }
+
     /* set prevKS name to use in analyzer */
     /* WARNING!
         cpu index 0 is equal "cpu"
